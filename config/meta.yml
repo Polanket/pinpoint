@@ -1,0 +1,5 @@
+meta_product_name: "pinpoint"
+meta_title: "pinpoint - Your personal location repository"
+meta_description: "Save all your favorite spots in an easy to navigate and shareable map."
+meta_image: "logo.png" # Found in `app/assets/images/`
+twitter_account: "@Es_pinpoint"
