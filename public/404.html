@@ -3,13 +3,46 @@
 <head>
   <title>Location not found (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <style>
+    .wrapper {
+      text-align: center;
+    }
+
+    .error-container {
+      margin-top: 50px;
+      width: 350px;
+      height: 100%;
+      max-height: 600px;
+      min-height: 400px;
+      border: 1px solid white;
+      border-radius: 20px;
+      box-shadow: 1px 1px 2px 2px rgba(18,18,18,0.6);
+      text-align:center;
+      display: inline-block;
+    }
+
+    .error-container img {
+      padding-top: 30px;
+      width: 250px;
+    }
+
+    .error-container h1 {
+      padding: 25px 10px 5px 20px;
+      margin: auto;
+    }
+
+
+  </style>
+
 </head>
 
 <body>
-  <div>
-    <div>
-      <h1>A location app that misplaced this location.</h1>
-      <p>It seems that the page you accessed doesn't exist anymore.</p>
+  <div class="wrapper">
+    <div class="error-container">
+      <img src="images/logo.png" alt="Pinpoint logo">
+      <h1>Page Not Found</h1>
+      <p>It seems like the page you accessed doesn't exist anymore.</p>
     </div>
   </div>
 </body>
