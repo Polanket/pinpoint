@@ -1,3 +1,7 @@
 <h1>Pinpoint homepage!</h1>
 
+<%= link_to "SIGN UP", new_user_registration_path %>
+<%= link_to "LOG IN", new_user_session_path %>
 
+<p>***Log out button is only for development***</p>
+<%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>
