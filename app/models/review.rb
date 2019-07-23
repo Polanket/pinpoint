@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
-  belongs_to :location
+  belongs_to :added_location
   belongs_to :user
 end
