@@ -4,15 +4,56 @@
   <title>Oh no! Something went wrong (422)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+    .wrapper {
+      text-align: center;
+    }
 
+    .error-container {
+      margin-top: 50px;
+      width: 350px;
+      height: 100%;
+      max-height: 600px;
+      min-height: 400px;
+      border-radius: 20px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      text-align:center;
+      display: inline-block;
+      padding: 20px;
+    }
+
+    .error-container img {
+      padding-top: 30px;
+      width: 250px;
+    }
+
+    .error-container h1 {
+      padding: 25px 10px 5px 20px;
+      margin: auto;
+    }
+
+    .error-container p {
+      margin-bottom: 50px;
+    }
+
+    .error-container a {
+      text-decoration: none;
+    }
+
+    .error-container a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
 <body>
-  <div>
-    <div>
-      <h1>Well thats embarrasing.</h1>
+  <div class="wrapper">
+    <div class="error-container">
+      <img src="images/logo.png" alt="Pinpoint logo">
+      <h1>Well that's embarrasing.</h1>
       <p>We are not smart enough to do that, please check the instructions for a list of our limited capabilities.</p>
+      <a href="http://www.pinpoint.es/">Back to homepage</a>
     </div>
   </div>
 </body>
