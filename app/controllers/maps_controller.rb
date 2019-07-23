@@ -1,5 +1,5 @@
 class MapsController < ApplicationController
   def index
-    skip_policy_scope
+    @maps = policy_scope(Map)
   end
 end

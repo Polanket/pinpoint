@@ -1,4 +1,9 @@
 <h1>Pinpoint homepage!</h1>
-<a href="" class="main-btn">SIGN UP</a>
-<a href="" class="secondary-btn">CREATE MAP</a>
+
+<%= link_to "SIGN UP", new_user_registration_path %>
+<%= link_to "LOG IN", new_user_session_path %>
+
+<p>***Log out button is only for development***</p>
+<%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>
+
 
