@@ -1,0 +1,22 @@
+.container {
+  padding: 20px 50px;
+  margin: auto;
+}
+
+
+.container img {
+  width: 300px;
+  margin: auto;
+  margin-bottom: 250px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.flex-item{
+  margin-bottom: 20px;
+}

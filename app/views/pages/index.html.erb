@@ -1,7 +1,31 @@
-<h1>Pinpoint homepage!</h1>
+<div class="container">
 
-<%= link_to "SIGN UP", new_user_registration_path %>
-<%= link_to "LOG IN", new_user_session_path %>
+  <div class="home-container">
 
-<p>***Log out button is only for development***</p>
-<%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>
+    <div class="flex-item">
+      <h1>Pinpoint homepage!</h1>
+    </div>
+
+    <div class="flex-item">
+      <img src="../../images/logo.png">
+    </div>
+
+    <div class="flex-item">
+      <%= link_to "SIGN UP", new_user_registration_path, class: "main-btn" %>
+    </div>
+
+    <div class="flex-item">
+      <%= link_to "LOG IN", new_user_session_path, class: "ghost-btn" %>
+    </div>
+
+    <div class="flex-item">
+      <p>***Log out button is only for development***</p>
+      <%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>
+    </div>
+
+  </div>
+
+</div>
+
+
+

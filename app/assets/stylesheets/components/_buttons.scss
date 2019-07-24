@@ -1,6 +1,8 @@
 .main-btn {
   padding: 14px 33px;
-  margin-bottom: 0;
+  width: 148px;
+  height: 53px;
+  margin-bottom: 0px;
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
@@ -17,10 +19,9 @@
 
 .secondary-btn {
   padding: 17px 29px;
-  margin-bottom: 0;
+  margin-bottom: 0px;
   text-decoration: none;
   text-align: center;
-  vertical-align: middle;
   border: 1px solid transparent;
   background: #C4C4C4;
   color: #FFFFFF;
@@ -38,7 +39,6 @@
   height: 53px;
   text-decoration: none;
   text-align: center;
-  vertical-align: middle;
   border: 1px solid transparent;
   color: linear-gradient(97.34deg, #CC2B5E 0%, rgba(198, 35, 87, 0.516328) 51.35%, rgba(206, 52, 101, 0) 100%), linear-gradient(270deg, #753A88 0%, rgba(117, 58, 136, 0) 100%);
   font-weight: normal;
