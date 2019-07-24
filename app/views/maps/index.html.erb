@@ -1,6 +1,11 @@
 <div class="map-container">
   <input id="searchTextField" type="text" size="50" placeholder="Search a location...">
-
+  <% @client.spots_by_query('goiko grill near madrid').each do |spot| %>
+    <div><%= spot.name %></div>
+    <div><%= spot.lat %></div>
+    <div><%= spot.lng %></div>
+    <div><%= spot.formatted_address %></div>
+  <% end %>
   <div id="map"></div>
 
   <div id="infowindow-content">
