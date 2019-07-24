@@ -3,7 +3,8 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^4.0.7",
-    "load-google-maps-api": "^2.0.1"
+    "load-google-maps-api": "^2.0.1",
+    "mapbox-gl": "^1.1.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.7.2"

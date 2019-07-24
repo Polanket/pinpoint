@@ -23,17 +23,9 @@ const generateMap = (mapObject, lat=40.4168, lng=-3.7038) => {
       lng: lng
     },
     zoom: 16,
-    disableDefaultUI: true
+    disableDefaultUI: false
   });
 };
-
-// // initAutocomplete creates the autocomplete object that will fill our input with the results
-// const initAutocomplete = (mapObject, map, inputElement) => {
-//   autocomplete = new mapObject.places.Autocomplete(inputElement);
-//   const places = new mapObject.places.PlacesService(map);
-//   autocomplete.bindTo('bounds', map);
-//   autocomplete.setFields(['address_components', 'geometry', 'icon', 'name']);
-// };
 
 // initInfoWindow creates the card with the place's information
 const initInfoWindow = (mapObject) => {
@@ -41,13 +33,21 @@ const initInfoWindow = (mapObject) => {
   infoWindow.setContent(infowindowContent);
 };
 
-// // initMarkers creates markers using the details from the search result
-// const initMarkers = (mapObject, map) => {
-//   marker = new mapObject.Marker({
-//     map: map,
-//     anchorPoint: new mapObject.Point(0, -29)
-//   });
-// };
+// Set markers
+const initMarkers = (mapObject, map) => {
+  console.log(JSON.parse(mapDiv.dataset.markers))
+  const markers = JSON.parse(mapDiv.dataset.markers);
+  console.log(markers)
+  markers.forEach((marker) => {
+    new mapObject.Marker({
+      position: {
+        lat: marker.lat,
+        lng: marker.lng
+      },
+      map: map,
+    });
+  });
+}
 
 // callMapAPI will call the google maps api
 const callMapAPI = () => {
@@ -55,11 +55,9 @@ const callMapAPI = () => {
     .then((googleMaps) => {
       generateMap(googleMaps);
 
-      // initAutocomplete(googleMaps, map, input);
-
       initInfoWindow(googleMaps);
 
-      // initMarkers(googleMaps, map);
+      initMarkers(googleMaps, map);
 
       const search = {
         query: input.value,

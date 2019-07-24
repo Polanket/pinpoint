@@ -1,16 +1,3 @@
 <div class="map-container">
-  <input id="searchTextField" type="text" size="50" placeholder="Search a location...">
-  <% @client.spots_by_query('goiko grill near madrid').each do |spot| %>
-    <div><%= spot.name %></div>
-    <div><%= spot.lat %></div>
-    <div><%= spot.lng %></div>
-    <div><%= spot.formatted_address %></div>
-  <% end %>
-  <div id="map"></div>
-
-  <div id="infowindow-content">
-      <img src="" width="16" height="16" id="place-icon">
-      <span id="place-name"  class="title"></span><br>
-      <span id="place-address"></span>
-  </div>
+  <div id="map" data-markers="<%= @markers.to_json %>"></div>
 </div>
