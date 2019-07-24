@@ -10,5 +10,5 @@ class User < ApplicationRecord
   has_many :reviews
 
   validates :email, :password, presence: true
-  validates :email, :username, uniqueness: true
+  validates :email, uniqueness: true
 end
