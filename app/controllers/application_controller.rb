@@ -23,10 +23,10 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :username, :email, :passwrod, :photo])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :passwrod, :avatar])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :username, :email, :passwrod, :photo])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:email, :passwrod, :avatar])
   end
 
   def after_sign_out_path_for(resource_or_scope)
@@ -43,9 +43,12 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource_or_scope)
+    if current_user.owned_maps.present?
+    user_map_path(current_user, current_user.owned_maps.first) #After login the user is redirected to his first map.
+    else
     @map = Map.create(user: current_user, name: current_user.email)
     user_map_path(current_user, @map)
-
+    end
   end
 
 end
