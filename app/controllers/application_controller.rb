@@ -43,8 +43,8 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource_or_scope)
-    #stored_location_for(resource_or_scope) || super
-    maps_path
+    @map = Map.create(user: current_user, name: current_user.email)
+    user_map_path(current_user, @map)
 
   end
 
