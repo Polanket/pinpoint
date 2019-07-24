@@ -1,10 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 
-const mapDiv = document.getElementById('map');
-const markers = JSON.parse(mapDiv.dataset.markers);
-
 // Places markers received from maps controller (checks if multiple markers or single lat lng combination)
-const placeMarkers = (map) => {
+const placeMarkers = (map, markers) => {
   console.log(markers)
   if (Array.isArray(markers)) {
     markers.forEach((marker) => {
@@ -33,6 +30,8 @@ const fitMapToMarkers = (map, markers) => {
 };
 
 const initMapbox = () => {
+  const mapDiv = document.getElementById('map');
+  const markers = JSON.parse(mapDiv.dataset.markers);
 
   if (mapDiv) {
     mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
@@ -41,7 +40,7 @@ const initMapbox = () => {
       style: 'mapbox://styles/mapbox/light-v9'
     });
 
-    placeMarkers(map);
+    placeMarkers(map, markers);
 
     fitMapToMarkers(map, markers);
   }
