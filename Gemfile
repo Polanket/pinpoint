@@ -18,6 +18,7 @@ gem 'webpacker'
 
 # Added Gems
 gem 'pundit'
+gem 'google_places'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
