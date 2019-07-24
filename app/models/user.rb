@@ -8,5 +8,4 @@ class User < ApplicationRecord
   has_many :owned_maps, class_name: 'Map'
   has_many :shared_maps, through: :user_groups, source: :map
   has_many :reviews
-
 end

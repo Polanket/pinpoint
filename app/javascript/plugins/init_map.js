@@ -14,7 +14,8 @@ const callMapAPI = (lat=40.4168, lng=-3.7038) => {
           lat: lat,
           lng: lng
         },
-        zoom: 12
+        zoom: 16,
+        disableDefaultUI: true
     })
   }).catch(error => console.log(error));
 };
