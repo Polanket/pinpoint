@@ -1,7 +1,8 @@
 .registration-form {
   border: none;
   width: 400px;
-  height: 650px;
+  min-height: 500px;
+  max-height: 700px;
   margin: auto;
   margin-top: 25px;
   align-content: center;
@@ -13,8 +14,8 @@
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  text-align: center;
 }
+
 
 .form-inputs {
   display: flex;
@@ -27,6 +28,9 @@
     border: none;
     border-bottom: 1px solid #000000;
     width: 100%;
+  }
+  fieldset{
+    border:white;
   }
   .form-group {
     margin-bottom: 30px;

@@ -1,16 +1,43 @@
-.pin-container {
+.login-form {
+  border: none;
+  width: 400px;
+  min-height: 500px;
+  max-height: 700px;
+  margin: auto;
+  margin-top: 25px;
+  align-content: center;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
-.pin-container img {
-  width: 300px;
-  margin: auto;
-  margin-bottom: 250px;
+.login-form p {
+  color: rgba(50, 47, 47, 0.8);
 }
 
-.flex-item{
-  margin-bottom: 20px;
+.password-lost {
+  text-align: left;
+  padding-left: 5px;
+  text-decoration: none;
+  color: rgb(144,144,144);
+  margin-bottom: 70px;
 }
+
+.password-lost :hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+.margin-login {
+margin-bottom: 20px;
+}
+
+
+
+
+
+
