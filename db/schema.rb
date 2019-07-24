@@ -10,33 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_23_164328) do
+ActiveRecord::Schema.define(version: 2019_07_24_085819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "added_locations", force: :cascade do |t|
-    t.bigint "location_id"
     t.bigint "map_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["location_id"], name: "index_added_locations_on_location_id"
+    t.string "name"
+    t.string "address"
+    t.text "description"
+    t.string "photo"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["map_id"], name: "index_added_locations_on_map_id"
   end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "locations", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.text "description"
-    t.string "photo"
-    t.float "lng"
-    t.float "lat"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -88,11 +81,11 @@ ActiveRecord::Schema.define(version: 2019_07_23_164328) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "added_locations", "locations"
   add_foreign_key "added_locations", "maps"
   add_foreign_key "maps", "users"
   add_foreign_key "reviews", "users"
