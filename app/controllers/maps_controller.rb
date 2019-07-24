@@ -1,18 +1,18 @@
 class MapsController < ApplicationController
-  skip_after_action :verify_authorized, only: [ :show ]
+  skip_after_action :verify_authorized, only: [:show]
+
   def index
     @maps = policy_scope(Map)
     @client = GooglePlaces::Client.new(ENV['GOOGLE_API_KEY'])
+  end
 
+  def add_location
     @markers = @client.spots_by_query('goiko grill near madrid').map do |spot|
       {
         lat: spot.lat,
         lng: spot.lng
       }
     end
-  end
-
-  def add_location
   end
 
   def show
@@ -33,6 +33,7 @@ class MapsController < ApplicationController
     end
   end
 
+  private
 
   def map_params
     params.require(:map).permit(:name, :description, :photo)
