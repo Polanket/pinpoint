@@ -3,7 +3,7 @@ import mapboxgl from 'mapbox-gl';
 // Places markers received from maps controller (checks if multiple markers or single lat lng combination)
 const placeMarkers = (map, markers) => {
   console.log(markers)
-  if (Array.isArray(markers)) {
+  if (Array.isArray(markers) && markers) {
     markers.forEach((marker) => {
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat])

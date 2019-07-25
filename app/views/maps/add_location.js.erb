@@ -1,0 +1,4 @@
+var mapDiv = document.getElementById('map');
+
+mapDiv.outerHTML = '<div id="map" data-markers="<%= @markers.to_json %>"></div>'
+initMapbox();

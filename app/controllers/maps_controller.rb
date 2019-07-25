@@ -1,18 +1,22 @@
 class MapsController < ApplicationController
   skip_after_action :verify_authorized, only: [:show]
+  before_action :current_map, only: [:index, :show, :add_location]
+  before_action :authenticate_google, only: [:add_location]
 
   def index
     @maps = policy_scope(Map)
-    @client = GooglePlaces::Client.new(ENV['GOOGLE_API_KEY'])
   end
 
   def add_location
-    @markers = @client.spots_by_query('goiko grill near madrid').map do |spot|
+    authorize @map
+    @markers = @client.spots_by_query(params[:query]).map do |spot|
       {
         lat: spot.lat,
         lng: spot.lng
       }
     end
+
+    ajax_request
   end
 
   def show
@@ -35,7 +39,22 @@ class MapsController < ApplicationController
 
   private
 
+  def ajax_request
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def current_map
+    @map = Map.find(params[:id])
+  end
+
+  def authenticate_google
+    @client = GooglePlaces::Client.new(ENV['GOOGLE_API_KEY'])
+  end
+
   def map_params
-    params.require(:map).permit(:name, :description, :photo)
+    params.require(:map).permit(:name, :description, :photo, :query)
   end
 end
