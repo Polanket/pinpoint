@@ -1,8 +1,7 @@
 .login-form {
   border: none;
-  width: 400px;
-  min-height: 500px;
-  max-height: 700px;
+  width: 100vw;
+  height: 100vh;
   margin: auto;
   margin-top: 25px;
   align-content: center;
@@ -10,30 +9,35 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
-  border-radius: 20px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.login-form h1 {
+  font-family: $headers-font;
 }
 
 .login-form p {
   color: rgba(50, 47, 47, 0.8);
+  font-family: $body-font;
 }
+
+
 
 .password-lost {
   text-align: left;
   padding-left: 5px;
   text-decoration: none;
-  color: rgb(144,144,144);
-  margin-bottom: 70px;
-}
-
-.password-lost :hover {
-  color: rgba(0, 0, 0, 1);
+  margin-bottom: 130px;
+  a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+    &:hover{
+      color: rgba(0, 0, 0, 1);
+    }
+  }
 }
 
 .margin-login {
-margin-bottom: 20px;
+margin-bottom: 45px;
 }
 
 
