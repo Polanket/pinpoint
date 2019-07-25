@@ -1,3 +1,16 @@
-<div class="map-container">
-  <div id="map" data-markers="<%= @markers.to_json %>"></div>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" id='close-nav'>&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
 </div>
+<div class="map-container">
+
+  <div id="map" data-markers="<%= @markers.to_json %>">
+    <div id="main">
+    <button class="openbtn" id='open-nav'>&#9776; Toggle Sidebar</button>
+  </div>
+  </div>
+</div>
+
