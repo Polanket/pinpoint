@@ -3,7 +3,9 @@ class MapPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-
+  def add_location?
+    true
   end
 end
