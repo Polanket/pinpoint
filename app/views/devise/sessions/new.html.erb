@@ -18,17 +18,13 @@
       </div>
 
     </div>
-  <% end %>
-
-    <div>
 
       <div class="margin-login">
-        <%= link_to "LOG IN", new_session_path(resource_name), class: "main-btn" %><br />
-        <% end %>
+        <%= f.button :submit, "LOG IN", class: "main-btn" %>
       </div>
+  <% end %>
 
-      <%= link_to "SIGN UP", new_registration_path(resource_name), class: "ghost-btn" %><br/>
+    <%= render "devise/shared/links" %>
 
-    </div>
 </div>
 
