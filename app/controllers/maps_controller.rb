@@ -1,26 +1,48 @@
 class MapsController < ApplicationController
   skip_after_action :verify_authorized, only: [:show]
-  before_action :current_map, only: [:index, :show, :add_location]
-  before_action :authenticate_google, only: [:add_location]
+  before_action :current_map, only: [:index, :show, :save_marker, :results]
+  before_action :authenticate_google, only: [:save_marker, :results]
 
   def index
     @maps = policy_scope(Map)
   end
 
-  def add_location
+  def results
     authorize @map
     @markers = @client.spots_by_query(params[:query]).map do |spot|
       {
         lat: spot.lat,
-        lng: spot.lng
+        lng: spot.lng,
+        infoWindow: render_to_string(partial: 'info_window', locals: { spot: spot })
       }
     end
+  end
 
-    ajax_request
+  def save_marker
+    authorize @map
+    location = @client.spot(params[:marker_id])
+    AddedLocation.create(
+    {
+      map_id: @map.id,
+      name: location.name,
+      address: location.formatted_address,
+      description: "Placeholder description",
+      photo: location.photos[0].fetch_url(800),
+      latitude: location.lat,
+      longitude: location.lng
+    })
+    redirect_to map_path
   end
 
   def show
     @map = Map.find(params[:id])
+    @markers = @map.added_locations.map do |location|
+      {
+        lat: location.latitude,
+        lng: location.longitude,
+        infoWindow: render_to_string(partial: 'added_info_window', locals: { spot: location })
+      }
+    end
   end
 
   def new
@@ -38,13 +60,6 @@ class MapsController < ApplicationController
   end
 
   private
-
-  def ajax_request
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
 
   def current_map
     @map = Map.find(params[:id])
