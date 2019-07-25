@@ -1,0 +1,10 @@
+<div class="event__search__floater">
+  <div class="search__anchor">
+    <%= form_tag view_locations_path(@map), remote: true, id:"event-search-form", method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "search__bar", placeholder: "Search for a location..." %>
+      <%= submit_tag "Submit", class: "search__submit" %>
+      <div class="search__toggler"></div>
+    <% end %>
+  </div>
+</div>
+
