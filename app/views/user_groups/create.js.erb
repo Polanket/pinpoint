@@ -12,8 +12,27 @@ function addUser(userHTML) {
 }
 
 <% if @user_group.errors.any? %>
-  refreshForm('<%= j render "user_groups/new", map: @map, user: @user %>');
+  refreshForm('<%= j render "user_groups/new", map: @map, user_group: @user_group %>');
 <% else %>
-  addUser('<%= j render "user_groups/new", user: @user %>');
-  refreshForm('<%= j render "user_groups/new", map: @map, user: user.new %>');
+  addUser('<%= j render "user_groups/show", user: @user_group %>');
+  refreshForm('<%= j render "user_groups/new", map: @map, user: UserGroup.new %>');
+<% end %>
+
+
+
+function refreshForm(innerHTML) {
+  const newReviewForm = document.getElementById('new_review');
+  newReviewForm.innerHTML = innerHTML;
+}
+
+function addReview(reviewHTML) {
+  const reviews = document.getElementById('reviews');
+  reviews.insertAdjacentHTML('beforeend', reviewHTML);
+}
+
+<% if @review.errors.any? %>
+  refreshForm('<%= j render "reviews/form", restaurant: @restaurant, review: @review %>');
+<% else %>
+  addReview('<%= j render "reviews/show", review: @review %>');
+  refreshForm('<%= j render "reviews/form", restaurant: @restaurant, review: Review.new %>');
 <% end %>

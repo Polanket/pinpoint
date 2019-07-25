@@ -1,5 +1,9 @@
 class UserGroupsController < ApplicationController
 
+  def show
+    @user_group = UserGroup.all
+  end
+
   def new
     @map = Map.find(params[:map_id])
     @user_group = UserGroup.new
