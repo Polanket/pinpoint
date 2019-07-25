@@ -30,8 +30,9 @@ class MapsController < ApplicationController
   def create
     @map = Map.new(map_params)
     @map.user = current_user
-    if map.save
-      redirect_to user_map_path(current_user, @map)
+    authorize @map
+    if @map.save
+      redirect_to map_path(@map)
     else
       render :new
     end
