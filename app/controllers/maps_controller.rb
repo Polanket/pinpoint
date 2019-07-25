@@ -20,7 +20,6 @@ class MapsController < ApplicationController
   end
 
   def show
-    @map = Map.find(params[:id])
   end
 
   def new
