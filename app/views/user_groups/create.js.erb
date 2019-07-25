@@ -12,8 +12,8 @@ function addUser(userHTML) {
 }
 
 <% if @user_group.errors.any? %>
-  refreshForm('<%= j render "user_groups/form", map: @map, user: @user %>');
+  refreshForm('<%= j render "user_groups/new", map: @map, user: @user %>');
 <% else %>
-  addUser('<%= j render "user_groups/show", user: @user %>');
-  refreshForm('<%= j render "user_groups/form", map: @map, user: user.new %>');
+  addUser('<%= j render "user_groups/new", user: @user %>');
+  refreshForm('<%= j render "user_groups/new", map: @map, user: user.new %>');
 <% end %>

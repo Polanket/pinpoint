@@ -19,7 +19,7 @@ class UserGroupsController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { render 'maps/show' }
+        format.html { render 'user_group/new' }
         format.js  # <-- idem
       end
     end
