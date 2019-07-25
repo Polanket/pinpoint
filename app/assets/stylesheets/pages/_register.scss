@@ -34,15 +34,20 @@
     border:white;
   }
   .form-group {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     text-align: left;
     color: #C4C4C4;
   }
 }
 
+.form-control {
+  height: 20px;
+  background-color: white;
+}
+
 .terms-and-conditions {
   display: inline-flex;
-  margin-bottom: 70px;
+  margin-bottom: 30px;
   .terms-button {
       width: 45px;
       height: 18px;
