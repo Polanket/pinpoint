@@ -31,7 +31,7 @@ class MapsController < ApplicationController
     @map.user = current_user
     authorize @map
     if @map.save
-      redirect_to map_path(@map)
+      redirect_to new_map_user_group_path(@map)
     else
       render :new
     end

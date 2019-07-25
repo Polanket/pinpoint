@@ -1,0 +1,19 @@
+console.log("jeej im here");
+
+function refreshForm(innerHTML) {
+  console.log('I am here');
+  const newUserForm = document.getElementById('user_group_user_id');
+  newUserForm.innerHTML = innerHTML;
+}
+
+function addUser(userHTML) {
+  const user = document.getElementById('users');
+  user.insertAdjacentHTML('beforeend', userHTML);
+}
+
+<% if @user_group.errors.any? %>
+  refreshForm('<%= j render "user_groups/form", map: @map, user: @user %>');
+<% else %>
+  addUser('<%= j render "user_groups/show", user: @user %>');
+  refreshForm('<%= j render "user_groups/form", map: @map, user: user.new %>');
+<% end %>

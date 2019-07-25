@@ -11,4 +11,9 @@ class User < ApplicationRecord
 
   validates :email, :password, presence: true
   validates :email, uniqueness: true
+
+
+  def all_users_but_self
+    User.all.select { |user| user != self }
+  end
 end

@@ -1,0 +1,16 @@
+<div id="users">
+  <% if @map.user_groups.blank? %>
+    <p>Add the first user to <%= @map.name %></p>
+  <% else %>
+    <% @map.user_groups do |user| %>
+      <%= user.email %>
+    <% end %>
+  <% end %>
+</div>
+
+
+
+<%= simple_form_for([ @map, @user_group ]) do |f|  %>
+  <%= f.association :user %>
+  <%= f.button :submit %>
+<% end %>
