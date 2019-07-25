@@ -5,7 +5,11 @@ class MapPolicy < ApplicationPolicy
     end
   end
 
-  def add_location?
+  def results?
+    true
+  end
+
+  def save_marker?
     true
   end
 
