@@ -21,7 +21,4 @@ const initNav = () => {
   })
 }
 
-
-
-
 export { initNav };
