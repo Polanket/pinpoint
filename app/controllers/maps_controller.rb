@@ -22,7 +22,6 @@ class MapsController < ApplicationController
     authorize @map
     location = @client.spot(params[:marker_id])
     AddedLocation.create(
-    {
       map_id: @map.id,
       name: location.name,
       address: location.formatted_address,
@@ -30,7 +29,7 @@ class MapsController < ApplicationController
       photo: location.photos[0].fetch_url(800),
       latitude: location.lat,
       longitude: location.lng
-    })
+    )
     redirect_to map_path
   end
 
