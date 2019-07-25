@@ -1,14 +1,15 @@
 <div id="mySidebar" class="sidebar">
+  <%= link_to "Add Map", new_map_path %>
   <a href="javascript:void(0)" class="closebtn" id='close-nav'>&times;</a>
+  <%= @map.name %>
   <a href="#">About</a>
   <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+
 </div>
 <div class="map-container">
   <div id="map" data-markers="<%= @markers.to_json %>">
     <div id="main">
-      <button class="openbtn" id='open-nav'>&#9776; Toggle Sidebar</button>
+      <button class="openbtn" id='open-nav'>&#9776;</button>
     </div>
   </div>
   <%= render 'search_box' %>

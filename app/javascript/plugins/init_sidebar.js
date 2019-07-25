@@ -10,14 +10,24 @@ const closeNav = () => {
   document.getElementById("main").style.marginLeft = "0";
 };
 
+const hideButton = () => {
+  document.getElementById("open-nav").style.display = 'none';
+}
+
+const showButton = () => {
+  document.getElementById("open-nav").style.display = 'inline';
+}
+
 const initNav = () => {
   const openButton = document.getElementById("open-nav");
   openButton.addEventListener("click", (event) => {
     openNav();
+    hideButton();
   })
   const closeButton = document.getElementById("close-nav");
   closeButton.addEventListener("click", (event) => {
     closeNav();
+    showButton();
   })
 }
 

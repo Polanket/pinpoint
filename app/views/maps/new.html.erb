@@ -1,0 +1,5 @@
+<h1>Here you can create a new map</h1>
+
+<%= render 'form', map: @map %>
+
+<%= link_to "Go back", map_path(current_user.owned_maps.first) %>

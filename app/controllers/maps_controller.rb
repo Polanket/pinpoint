@@ -1,5 +1,5 @@
 class MapsController < ApplicationController
-  skip_after_action :verify_authorized, only: [:show]
+  skip_after_action :verify_authorized, only: [:show, :new]
   before_action :current_map, only: [:index, :show, :add_location]
   before_action :authenticate_google, only: [:add_location]
 
@@ -20,7 +20,6 @@ class MapsController < ApplicationController
   end
 
   def show
-    @map = Map.find(params[:id])
   end
 
   def new
@@ -30,8 +29,9 @@ class MapsController < ApplicationController
   def create
     @map = Map.new(map_params)
     @map.user = current_user
-    if map.save
-      redirect_to user_map_path(current_user, @map)
+    authorize @map
+    if @map.save
+      redirect_to map_path(@map)
     else
       render :new
     end
