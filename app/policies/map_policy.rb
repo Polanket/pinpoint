@@ -12,4 +12,8 @@ class MapPolicy < ApplicationPolicy
   def save_marker?
     true
   end
+
+  def create?
+    true
+  end
 end
