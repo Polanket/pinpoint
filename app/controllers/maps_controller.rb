@@ -1,5 +1,5 @@
 class MapsController < ApplicationController
-  skip_after_action :verify_authorized, only: [:show]
+  skip_after_action :verify_authorized, only: [:show, :new]
   before_action :current_map, only: [:index, :show, :add_location]
   before_action :authenticate_google, only: [:add_location]
 

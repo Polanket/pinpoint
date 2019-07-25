@@ -8,4 +8,8 @@ class MapPolicy < ApplicationPolicy
   def add_location?
     true
   end
+
+  def new?
+    true
+  end
 end
