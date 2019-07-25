@@ -6,7 +6,7 @@
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
-  background-color: rgba(192,192,192,0.5);
+  background-color: rgba(200,200,200,0.5);
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
@@ -40,8 +40,8 @@
 .openbtn {
   font-size: 20px;
   cursor: pointer;
-  background-color: #111;
-  color: white;
+  background-color: transparent;
+  color: black;
   padding: 10px 15px;
   border: none;
   position: fixed;

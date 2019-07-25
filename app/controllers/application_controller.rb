@@ -44,10 +44,10 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource_or_scope)
     if current_user.owned_maps.present?
-    user_map_path(current_user, current_user.owned_maps.first) #After login the user is redirected to his first map.
+    map_path(current_user.owned_maps.first) #After login the user is redirected to his first map.
     else
     @map = Map.create(user: current_user, name: current_user.email)
-    user_map_path(current_user, @map)
+    map_path(@map)
     end
   end
 
