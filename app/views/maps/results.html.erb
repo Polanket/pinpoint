@@ -1,7 +1,7 @@
 <div id="mySidebar" class="sidebar">
   <%= link_to "Add Map", new_map_path, class: "links main-btn" %>
   <a href="javascript:void(0)" class="closebtn" id='close-nav'>&times;</a>
-  <%= @map.name %>
+  <%= render 'map_list' %>
   <%= render 'logout_button' %>
 </div>
 
