@@ -46,6 +46,7 @@ class MapsController < ApplicationController
 
   def new
     @map = Map.new
+    authorize @map
   end
 
   def create

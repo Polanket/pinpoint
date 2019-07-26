@@ -1,5 +1,9 @@
 <%= simple_form_for map do |f| %>
+<div class="form-inputs">
   <%= f.input :name, placeholder: 'Map Subject' %>
-  <%= f.input :description, placeholder: 'What is this map about?' %>
-  <%= f.button :submit %>
+</div>
+<div class="form-inputs">
+  <%= f.input :description, as: :string, placeholder: 'What is this map about?' %>
+</div>
+<%= f.button :submit, class: "main-btn" %>
 <% end %>

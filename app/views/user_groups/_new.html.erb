@@ -1,13 +1,16 @@
-<div id="users">
+<div class="pin-container registration-form">
+  <h1>Select a friend from the list below and add it to your map</h1>
   <% if map.user_groups.blank? %>
-    <p>Add the first user to <%= @map.name %></p>
+  <p>Add the first user to <%= @map.name %></p>
   <% else %>
+  <ul id="users">
     <% map.user_groups.each do |user_group| %>
-      <%= render 'show', user_group: user_group %>
+    <%= render 'show', user_group: user_group %>
     <% end %>
-  <% end %>
+    <% end %>
+  </ul>
+
+  <%= render 'form', map: map, user_group: user_group %>
+  <%= link_to "GO TO MAP", map_path(@map), class: "main-btn" %>
+
 </div>
-
-<%= render 'form', map: map, user_group: user_group %>
-
-
