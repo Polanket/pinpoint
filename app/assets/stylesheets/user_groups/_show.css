@@ -1,0 +1,10 @@
+.registration-form ul {
+  font-family: $body-font;
+  padding: 17px 25px 0px 25px;
+  align-self: center;
+  margin-top: 0;
+  color: rgba(50, 47, 47, 0.8);
+  list-style-type: none;
+}
+
+
