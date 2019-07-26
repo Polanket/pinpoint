@@ -2,17 +2,17 @@
   <div class="my-maps">
     <h2>My Created Maps:</h2>
     <% @my_maps.each do |map| %>
-      <%= link_to map_path(map) do %>
-        <p><%= map.name  %></p>
+      <%= link_to map_path(map), style:"text-decoration:none" do %>
+        <p class="ghost-btn"><%= map.name  %></p>
       <% end %>
     <% end %>
   </div>
   <% if @shared_maps.exists? %>
     <div class="shared-maps">
       <h2>My Shared Maps:</h2>
-      <% @shared_maps.each do |map| %>
+      <% @shared_maps.each, style:"text-decoration:none" do |map| %>
         <%= link_to map_path(map) do %>
-          <p><%= map.name  %></p>
+          <p class="ghost-btn"><%= map.name  %></p>
         <% end %>
       <% end %>
     </div>
