@@ -37,24 +37,30 @@
   position: absolute;
   top: 0;
   right: 25px;
-  font-size: 36px;
+  font-size: 40px;
   margin-left: 50px;
+  color: white;
 }
 
 /* The button used to open the sidebar */
 .openbtn {
-  font-size: 20px;
+  margin: 10px 15px;
+  height: 70px;
+  width: 70px;
+  font-size: 40px;
   cursor: pointer;
-  background-color: transparent;
-  color: black;
-  padding: 10px 15px;
+  color: white;
+  background: linear-gradient(97.34deg, #CC2B5E 0%, rgba(198, 35, 87, 0.516328) 51.35%, rgba(206, 52, 101, 0) 100%), linear-gradient(270deg, #753A88 0%, rgba(117, 58, 136, 0) 100%);
   border: none;
   position: fixed;
   z-index: 2;
+  vertical-align: middle;
+  border-radius: 50%;
 }
 
 .openbtn:hover {
-  background-color: #444;
+  background: transparent;
+  color: gray;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */

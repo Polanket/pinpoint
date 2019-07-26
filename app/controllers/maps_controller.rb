@@ -2,6 +2,8 @@ class MapsController < ApplicationController
   skip_after_action :verify_authorized, only: [:show]
   before_action :current_map, only: [:index, :show, :save_marker, :results]
   before_action :authenticate_google, only: [:save_marker, :results]
+  before_action :my_maps, only: [:show, :results]
+  before_action :shared_maps, only: [:show, :results]
 
   def index
     @maps = policy_scope(Map)
@@ -59,6 +61,14 @@ class MapsController < ApplicationController
   end
 
   private
+
+  def my_maps
+    @my_maps = current_user.owned_maps
+  end
+
+  def shared_maps
+    @shared_maps = current_user.shared_maps
+  end
 
   def my_locations
     my_markers = @map.added_locations.map do |location|
