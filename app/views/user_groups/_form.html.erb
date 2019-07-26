@@ -1,7 +1,7 @@
 <%= simple_form_for([ map, user_group ], remote: true) do |f|  %>
   <div class="form-inputs">
-  <%= f.association :user %>
+  <%= f.association :user, label_method: :name, class: "userlist" %>
   </div>
-  <%= f.button :submit, "+", class: "ghost-btn" %>
+  <%= f.button :submit, "ADD FRIEND", class: "addfriend-btn" %>
 <% end %>
 
