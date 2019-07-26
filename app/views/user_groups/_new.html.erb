@@ -3,12 +3,12 @@
   <% if map.user_groups.blank? %>
   <p>Add the first user to <%= @map.name %></p>
   <% else %>
-  <ul id="users">
+  <ol id="users">
     <% map.user_groups.each do |user_group| %>
     <%= render 'show', user_group: user_group %>
     <% end %>
     <% end %>
-  </ul>
+  </ol>
 
   <%= render 'form', map: map, user_group: user_group %>
   <%= link_to "GO TO MAP", map_path(@map), class: "main-btn" %>
