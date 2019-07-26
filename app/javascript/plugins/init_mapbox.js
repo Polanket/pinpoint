@@ -2,17 +2,22 @@ import mapboxgl from 'mapbox-gl';
 
 // Places markers received from maps controller (checks if multiple markers or single lat lng combination)
 const placeMarkers = (map, markers) => {
-  console.log(markers)
   if (Array.isArray(markers) && markers) {
     markers.forEach((marker) => {
+      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat])
+        .addTo(map)
+        .setPopup(popup)
         .addTo(map);
     });
 
   } else {
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     new mapboxgl.Marker()
       .setLngLat([ markers.lng, markers.lat ])
+      .addTo(map)
+      .setPopup(popup)
       .addTo(map);
 
     map.flyTo({
@@ -42,7 +47,6 @@ const fitMapToMarkers = (map, markers) => {
 const initMapbox = () => {
   const mapDiv = document.getElementById('map');
   const markers = JSON.parse(mapDiv.dataset.markers);
-  console.log(markers)
   if (mapDiv) {
     mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
     const map = new mapboxgl.Map({
