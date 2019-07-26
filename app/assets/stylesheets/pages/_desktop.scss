@@ -1,8 +1,8 @@
 @media (min-width: 700px) {
-  /* For a screen < 960px, this CSS will be read */
   .pin-container img {
     width: 450px;
-    margin-bottom: 150px;
+    // margin-bottom: 100px;
+    margin-top: 20px;
   }
   .main-btn {
     padding: 20px 47.12px;
@@ -15,7 +15,7 @@
     font-size: 28px;
   }
   .flex-item{
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
   .index-margin {
     margin-top: 15px;
