@@ -5,7 +5,8 @@ const placeMarkers = (map, markers) => {
   if (Array.isArray(markers) && markers) {
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-      new mapboxgl.Marker()
+      const custom_marker = customMarker(marker);
+      new mapboxgl.Marker(custom_marker)
         .setLngLat([ marker.lng, marker.lat])
         .addTo(map)
         .setPopup(popup)
@@ -14,7 +15,8 @@ const placeMarkers = (map, markers) => {
 
   } else {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-    new mapboxgl.Marker()
+    const custom_marker = customMarker(markers);
+    new mapboxgl.Marker(custom_marker)
       .setLngLat([ markers.lng, markers.lat ])
       .addTo(map)
       .setPopup(popup)
@@ -43,6 +45,19 @@ const fitMapToMarkers = (map, markers) => {
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
+
+// Creates the custom marker html element
+const customMarker = (marker) => {
+  const element = document.createElement('div');
+  element.className = 'custom_marker';
+  element.style.backgroundImage = `url('${marker.image_url}')`;
+  element.style.backgroundSize = 'contain';
+  element.style.backgroundRepeat = 'no-repeat';
+  element.style.zIndex = "1";
+  element.style.width = '42.5px';
+  element.style.height = '60px';
+  return element;
+}
 
 const initMapbox = () => {
   const mapDiv = document.getElementById('map');

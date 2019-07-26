@@ -9,12 +9,17 @@ class MapsController < ApplicationController
 
   def results
     authorize @map
+
     @markers = @client.spots_by_query(params[:query]).map do |spot|
       {
         lat: spot.lat,
         lng: spot.lng,
-        infoWindow: render_to_string(partial: 'info_window', locals: { spot: spot })
+        infoWindow: render_to_string(partial: 'info_window', locals: { spot: spot }),
+        image_url: helpers.asset_url('new_location')
       }
+    end
+    my_locations.each do |location|
+      @markers << location
     end
   end
 
@@ -35,13 +40,7 @@ class MapsController < ApplicationController
 
   def show
     @map = Map.find(params[:id])
-    @markers = @map.added_locations.map do |location|
-      {
-        lat: location.latitude,
-        lng: location.longitude,
-        infoWindow: render_to_string(partial: 'added_info_window', locals: { spot: location })
-      }
-    end
+    @markers = my_locations
   end
 
   def new
@@ -60,6 +59,18 @@ class MapsController < ApplicationController
   end
 
   private
+
+  def my_locations
+    my_markers = @map.added_locations.map do |location|
+      {
+        lat: location.latitude,
+        lng: location.longitude,
+        infoWindow: render_to_string(partial: 'added_info_window', locals: { spot: location }),
+        image_url: helpers.asset_url('added_location')
+      }
+    end
+    my_markers
+  end
 
   def current_map
     @map = Map.find(params[:id])
