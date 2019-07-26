@@ -23,10 +23,10 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :passwrod, :avatar])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :passwrod, :avatar])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:email, :passwrod, :avatar])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :email, :passwrod, :avatar])
   end
 
   def after_sign_out_path_for(resource_or_scope)
