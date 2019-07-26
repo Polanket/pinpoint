@@ -1,0 +1,91 @@
+@media (min-width: 700px) {
+  /* For a screen < 960px, this CSS will be read */
+  .pin-container img {
+    width: 450px;
+    margin-bottom: 150px;
+  }
+  .main-btn {
+    padding: 20px 47.12px;
+    letter-spacing: 3px;
+    font-size: 28px;
+  }
+  .ghost-btn {
+    padding: 25px 70px;
+    letter-spacing: 3px;
+    font-size: 28px;
+  }
+  .flex-item{
+    margin-bottom: 40px;
+  }
+  .index-margin {
+    margin-top: 15px;
+  }
+  .registration-form {
+    margin-top: 0px;
+  }
+  .registration-form h1 {
+    font-family: $headers-font;
+    font-size: 3em;
+  }
+  .registration-form p {
+    font-size: 20px;
+    // margin-bottom: 2px;
+  }
+  .form-inputs {
+    width: 500px;
+    .form-group {
+      margin-bottom: 35px;
+    }
+    input {
+      font-size: 20px;
+    }
+  }
+  .form-control-label {
+      font-size: 22px;
+    }
+  .form-control {
+    height: 30px;
+    background-color: white;
+  }
+  .terms-and-conditions {
+    margin-bottom: 20px;
+    .terms-button {
+        width: 55px;
+        height: 22px;
+      .terms-circle {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+  .login-form {
+    margin-top: 5px;
+  }
+  .login-form h1 {
+    font-size: 3em;
+  }
+  .login-form p {
+    font-size: 20px;
+  }
+  .password-lost {
+    margin-bottom: 100px;
+    font-size: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
