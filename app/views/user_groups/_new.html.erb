@@ -1,0 +1,13 @@
+<div id="users">
+  <% if map.user_groups.blank? %>
+    <p>Add the first user to <%= @map.name %></p>
+  <% else %>
+    <% map.user_groups.each do |user_group| %>
+      <%= render 'show', user_group: user_group %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= render 'form', map: map, user_group: user_group %>
+
+
