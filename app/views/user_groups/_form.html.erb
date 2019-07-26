@@ -1,1 +1,4 @@
-
+<%= simple_form_for([ map, user_group ], remote: true) do |f|  %>
+  <%= f.association :user %>
+  <%= f.button :submit %>
+<% end %>

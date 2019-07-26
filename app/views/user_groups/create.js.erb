@@ -1,10 +1,9 @@
 console.log("jeej im here");
 
 function refreshForm(innerHTML) {
-  console.log('I am here');
-  const newUserForm = document.getElementById('user_group_user_id');
+  const newUserForm = document.querySelector('#new_user_group');
   newUserForm.innerHTML = innerHTML;
-}
+  }
 
 function addUser(userHTML) {
   const user = document.getElementById('users');
@@ -12,27 +11,8 @@ function addUser(userHTML) {
 }
 
 <% if @user_group.errors.any? %>
-  refreshForm('<%= j render "user_groups/new", map: @map, user_group: @user_group %>');
+  refreshForm('<%= j render "form", map: @map, user_group: @user_group %>');
 <% else %>
-  addUser('<%= j render "user_groups/show", user: @user_group %>');
-  refreshForm('<%= j render "user_groups/new", map: @map, user: UserGroup.new %>');
-<% end %>
-
-
-
-function refreshForm(innerHTML) {
-  const newReviewForm = document.getElementById('new_review');
-  newReviewForm.innerHTML = innerHTML;
-}
-
-function addReview(reviewHTML) {
-  const reviews = document.getElementById('reviews');
-  reviews.insertAdjacentHTML('beforeend', reviewHTML);
-}
-
-<% if @review.errors.any? %>
-  refreshForm('<%= j render "reviews/form", restaurant: @restaurant, review: @review %>');
-<% else %>
-  addReview('<%= j render "reviews/show", review: @review %>');
-  refreshForm('<%= j render "reviews/form", restaurant: @restaurant, review: Review.new %>');
+  addUser('<%= j render "show", user_group: @user_group %>');
+  refreshForm('<%= j render "form", map: @map, user_group: UserGroup.new %>');
 <% end %>

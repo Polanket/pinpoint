@@ -1,5 +1,6 @@
 class UserGroupsController < ApplicationController
 
+
   def show
     @user_group = UserGroup.all
   end
@@ -19,12 +20,12 @@ class UserGroupsController < ApplicationController
     if @user_group.save
       respond_to do |format|
         format.html { redirect_to map_path(@map) }
-        format.js  # <-- will render `app/views/reviews/create.js.erb`
+        format.js # <-- will render `app/views/user_groups/create.js.erb`
       end
     else
       respond_to do |format|
         format.html { render 'user_group/new' }
-        format.js  # <-- idem
+        format.js # <-- idem
       end
     end
   end
