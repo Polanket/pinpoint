@@ -10,8 +10,8 @@
   <% if @shared_maps.exists? %>
     <div class="shared-maps">
       <h2>My Shared Maps:</h2>
-      <% @shared_maps.each, style:"text-decoration:none" do |map| %>
-        <%= link_to map_path(map) do %>
+      <% @shared_maps.each  do |map| %>
+        <%= link_to map_path(map), style:"text-decoration:none" do %>
           <p class="ghost-btn"><%= map.name  %></p>
         <% end %>
       <% end %>
