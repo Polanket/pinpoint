@@ -46,9 +46,8 @@ class ApplicationController < ActionController::Base
     if current_user.owned_maps.present?
     map_path(current_user.owned_maps.first) #After login the user is redirected to his first map.
     else
-    @map = Map.create(user: current_user, name: current_user.email)
+    @map = Map.create(user: current_user, name: "#{current_user.name}'s map")
     map_path(@map)
     end
   end
-
 end

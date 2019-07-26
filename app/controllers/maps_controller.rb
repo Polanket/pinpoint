@@ -17,7 +17,7 @@ class MapsController < ApplicationController
         lat: spot.lat,
         lng: spot.lng,
         infoWindow: render_to_string(partial: 'info_window', locals: { spot: spot }),
-        image_url: helpers.asset_url('new_location')
+        image_url: helpers.asset_url('new_location.png')
       }
     end
     my_locations.each do |location|
@@ -77,7 +77,7 @@ class MapsController < ApplicationController
         lat: location.latitude,
         lng: location.longitude,
         infoWindow: render_to_string(partial: 'added_info_window', locals: { spot: location }),
-        image_url: helpers.asset_url('added_location')
+        image_url: helpers.asset_url('added_location.png')
       }
     end
     my_markers

@@ -76,7 +76,7 @@ const initMapbox = () => {
 
     postionButton(map)
 
-    if (markers) {
+    if (markers && markers !== 'null') {
       placeMarkers(map, markers);
 
       fitMapToMarkers(map, markers);
