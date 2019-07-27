@@ -8,6 +8,7 @@ Rails.application.configure do
                                                 'http://www.pinpoint.es']
 
   config.action_cable.url = "wss://pinpoint.es/cable"
+  config.web_socket_url = "wss://pinpoint.es/cable"
   # Code is not reloaded between requests.
   config.cache_classes = true
 
