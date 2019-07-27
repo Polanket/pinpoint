@@ -1,0 +1,19 @@
+<div class="map-list">
+  <div class="my-maps" style="margin-bottom:20px;">
+    <h2 style="font-family:Rubik; color:gray;">My Created Maps:</h2>
+    <% @my_maps.each do |map| %>
+      <%= link_to map.name, map_path(map),class:"ghost-btn", style:"text-decoration:none; font-size: 22px; font-family: karla; color: black;" %>
+      <hr>
+    <% end %>
+  </div>
+  <% if @shared_maps.exists? %>
+    <div class="shared-maps" style="margin-bottom:20px;">
+      <h2 style="font-family:Rubik; color:gray;">My Shared Maps:</h2>
+      <% @shared_maps.each  do |map| %>
+        <%= link_to map_path(map), style:"text-decoration:none;" do %>
+          <p class="ghost-btn" style="font-size: 22px; font-family: karla; color: black; margin-bottom: 15px;"><%= map.name  %></p>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

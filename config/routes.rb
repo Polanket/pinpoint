@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :maps do
     resources :user_groups, only: [:new, :create]
   end
+  resource :map_queries
   get 'maps/:id/results', to: 'maps#results', as: 'search_results'
-  post 'maps/:id/:marker_id', to: 'maps#save_marker', as: 'save_marker'
+  post 'maps/:id/:marker_id', to: 'added_locations#create', as: 'save_marker'
 end

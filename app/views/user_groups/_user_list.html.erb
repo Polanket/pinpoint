@@ -1,0 +1,8 @@
+ <% if map.user_groups.blank? %>
+  <p>Add the first user to <%= map.name %></p>
+<% end %>
+<ol>
+  <% map.user_groups.each do |user_group| %>
+    <li><%= user_group.user.name %><li>
+  <% end %>
+</ol>

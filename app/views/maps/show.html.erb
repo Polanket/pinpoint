@@ -1,16 +1,6 @@
-<div id="mySidebar" class="sidebar">
-  <%= link_to "Add Map", new_map_path, class: "links main-btn" %>
-  <a href="javascript:void(0)" class="closebtn" id='close-nav'>&times;</a>
-  <%= render 'map_list' %>
-  <%= render 'logout_button' %>
+<div class="map-container" id="map_container">
+  <%= render 'map_container', markers: @markers %>
 </div>
-
-<div class="map-container">
-  <div id="map" data-markers="<%= @markers.to_json %>">
-    <div id="main">
-      <button class="openbtn" id='open-nav'><i class="fas fa-bars"></i></button>
-    </div>
-  </div>
   <%= render 'search_box' %>
-</div>
+
 

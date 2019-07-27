@@ -1,1 +1,10 @@
-<%= render "new", map: @map, user_group: @user_group %>
+<div class="pin-container registration-form">
+  <h1>Who is in your map?</h1>
+ <div id="users">
+  <%= render 'user_list', map: @map %>
+ </div>
+
+  <%= render 'form', map: @map, user_group: @user_group %>
+  <%= link_to "GO TO MAP", map_path(@map), class: "main-btn" %>
+
+</div>

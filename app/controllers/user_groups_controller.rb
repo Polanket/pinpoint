@@ -13,24 +13,12 @@ class UserGroupsController < ApplicationController
 
   def create
     @map = Map.find(params[:map_id])
-
-    @user_group = UserGroup.new(user_group_params)
-    @user_group.map = @map
+    @user_group = @map.user_groups.where(user_group_params).first_or_create
     authorize @user_group
-    if @user_group.save
-      respond_to do |format|
-        format.html { redirect_to map_path(@map) }
-        format.js # <-- will render `app/views/user_groups/create.js.erb`
-      end
-    else
-      respond_to do |format|
-        format.html { render 'user_group/new' }
-        format.js # <-- idem
-      end
-    end
+    respond_to { |format| format.js } # <-- will render `app/views/user_groups/create.js.erb`
   end
 
   def user_group_params
-    params.require(:user_group).permit(:user_id, :map_id)
+    params.require(:user_group).permit(:user_id)
   end
 end
