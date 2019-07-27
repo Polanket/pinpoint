@@ -1,18 +1,18 @@
 class MapsController < ApplicationController
   skip_after_action :verify_authorized, only: [:show]
-  before_action :current_map, only: [:index, :show, :save_marker, :results]
-  before_action :authenticate_google, only: [:save_marker, :results]
   before_action :my_maps, only: [:show, :results]
   before_action :shared_maps, only: [:show, :results]
 
-  def index
-    @maps = policy_scope(Map)
+  def show
+    @map = params[:id].present? ? current_map : current_user.owned_maps.first_or_create(name: "#{current_user.name}'s map")
+    composer = marker_composer(@map)
+    @markers = composer.compose
   end
 
   def results
-    authorize @map
+    authorize current_map
 
-    @markers = @client.spots_by_query(params[:query]).map do |spot|
+    @markers = GPClient.spots_by_query(params[:query]).map do |spot|
       {
         lat: spot.lat,
         lng: spot.lng,
@@ -20,16 +20,17 @@ class MapsController < ApplicationController
         image_url: helpers.asset_url('new_location.png')
       }
     end
-    my_locations.each do |location|
+    own_markers = marker_composer(current_map).compose
+    own_markers.each do |location|
       @markers << location
     end
   end
 
   def save_marker
-    authorize @map
-    location = @client.spot(params[:marker_id])
+    authorize current_map
+    location = GPClient.spot(params[:marker_id])
     AddedLocation.create(
-      map_id: @map.id,
+      map_id: current_map.id,
       name: location.name,
       address: location.formatted_address,
       description: "Placeholder description",
@@ -40,10 +41,6 @@ class MapsController < ApplicationController
     redirect_to map_path
   end
 
-  def show
-    @map = Map.find(params[:id])
-    @markers = my_locations
-  end
 
   def new
     @map = Map.new
@@ -63,6 +60,10 @@ class MapsController < ApplicationController
 
   private
 
+  def marker_composer(map)
+    ::Composers::Markers.new(map)
+  end
+
   def my_maps
     @my_maps = current_user.owned_maps
   end
@@ -71,24 +72,8 @@ class MapsController < ApplicationController
     @shared_maps = current_user.shared_maps
   end
 
-  def my_locations
-    my_markers = @map.added_locations.map do |location|
-      {
-        lat: location.latitude,
-        lng: location.longitude,
-        infoWindow: render_to_string(partial: 'added_info_window', locals: { spot: location }),
-        image_url: helpers.asset_url('added_location.png')
-      }
-    end
-    my_markers
-  end
-
   def current_map
     @map = Map.find(params[:id])
-  end
-
-  def authenticate_google
-    @client = GooglePlaces::Client.new(ENV['GOOGLE_API_KEY'])
   end
 
   def map_params

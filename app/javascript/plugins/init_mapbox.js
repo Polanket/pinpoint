@@ -1,4 +1,5 @@
 import mapboxgl from 'mapbox-gl';
+import markerIcon from '../images/added_location.png';
 
 // Places markers received from maps controller (checks if multiple markers or single lat lng combination)
 const placeMarkers = (map, markers) => {
@@ -50,7 +51,7 @@ const fitMapToMarkers = (map, markers) => {
 const customMarker = (marker) => {
   const element = document.createElement('div');
   element.className = 'custom_marker';
-  element.style.backgroundImage = `url('${marker.image_url}')`;
+  element.style.backgroundImage = `url('${marker.image_url || markerIcon}')`;
   element.style.backgroundSize = 'contain';
   element.style.backgroundRepeat = 'no-repeat';
   element.style.zIndex = "1";
