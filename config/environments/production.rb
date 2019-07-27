@@ -1,7 +1,9 @@
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: "https:www.pinpoint.es" }
   # Settings specified here will take precedence over those in config/application.rb.
-
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
   # Code is not reloaded between requests.
   config.cache_classes = true
 
