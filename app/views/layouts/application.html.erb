@@ -30,15 +30,9 @@
     <%= favicon_link_tag %>
   </head>
   <body>
-    <div id="mySidebar" class="sidebar">
-      <%= link_to "Add Map", new_map_path, class: "links main-btn" %>
-      <a href="javascript:void(0)" class="closebtn" id='close-nav'>&times;</a>
-      <%= render 'layouts/shared/map_list' %>
-      <%= render 'layouts/shared/logout_button' %>
-    </div>
-    <div id="main">
-      <button class="openbtn" id='open-nav'><i class="fas fa-bars"></i></button>
-    </div>
+    <% if current_user %>
+      <%= render 'layouts/shared/side_bar'  %>
+    <% end %>
    <!--  <% render 'shared/flashes' %> -->
     <%= yield %>
     <%= javascript_include_tag 'application' %>

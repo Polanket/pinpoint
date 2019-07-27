@@ -11,6 +11,10 @@ module Composers
       generate_view_data
     end
 
+    def compose_marker(added_location)
+      parse_locations(added_location)
+    end
+
     private
 
     def generate_view_data

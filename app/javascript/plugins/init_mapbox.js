@@ -15,7 +15,7 @@ const placeMarkers = (map, markers) => {
     });
 
   } else {
-    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+    const popup = new mapboxgl.Popup().setHTML(markers.infoWindow);
     const custom_marker = customMarker(markers);
     new mapboxgl.Marker(custom_marker)
       .setLngLat([ markers.lng, markers.lat ])
@@ -23,10 +23,10 @@ const placeMarkers = (map, markers) => {
       .setPopup(popup)
       .addTo(map);
 
-    map.flyTo({
-      center: [ markers.lng, markers.lat ],
-      zoom: 14
-    })
+    // map.flyTo({
+    //   center: [ markers.lng, markers.lat ],
+    //   zoom: 14
+    // })
   }
 };
 
@@ -65,7 +65,7 @@ const initMapbox = () => {
   const markers = JSON.parse(mapDiv.dataset.markers);
   if (mapDiv) {
     mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
-    const map = new mapboxgl.Map({
+    window.map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v9',
     });
@@ -85,4 +85,4 @@ const initMapbox = () => {
   }
 };
 
-export { initMapbox };
+export { initMapbox, placeMarkers };
