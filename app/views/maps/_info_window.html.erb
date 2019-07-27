@@ -1,2 +1,2 @@
 <h2><%= spot.name %></h2>
-<%= link_to 'Add Marker', save_marker_path(@map, spot.place_id), method: :post, class:"ghost-btn" %>
+<%= link_to 'Add Marker', save_marker_path(@map, spot.place_id), method: :post, remote: true, class:"ghost-btn" %>

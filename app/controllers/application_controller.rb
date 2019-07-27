@@ -2,12 +2,18 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :global_data
 
   include Pundit
 
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
+
+  def global_data
+    @my_maps = current_user.owned_maps
+    @shared_maps = current_user.shared_maps
+  end
 
   private
 

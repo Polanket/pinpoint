@@ -1,7 +1,8 @@
 <div class="event__search__floater">
   <div class="search__anchor">
-    <%= form_tag search_results_path(@map), id:"event-search-form", method: :get do %>
-      <%= text_field_tag :query, params[:query], class: "search__bar", placeholder: "Search for a location..." %>
+    <%= form_tag map_queries_path, id:"event-search-form", method: :post, remote: true do %>
+      <%= hidden_field_tag :map_id, @map.id %>
+      <%= text_field_tag :query, params[:query], class: "search__bar", placeholder: "Example: goiko, madrid" %>
       <%= submit_tag "Submit", class: "search__submit" %>
       <div class="search__toggler"></div>
     <% end %>
