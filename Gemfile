@@ -19,6 +19,8 @@ gem 'webpacker'
 # Added Gems
 gem 'pundit'
 gem 'google_places'
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
