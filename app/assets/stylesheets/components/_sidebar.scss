@@ -9,7 +9,7 @@
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
-  background: linear-gradient(30deg, rgba(236,233,230,0.7), rgb(255,255,255));
+  background: linear-gradient(to right, rgba(236,233,230,0.7), rgb(255,255,255));
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
@@ -23,7 +23,7 @@
   text-decoration: none;
 }
 .sidebar-container-avatar {
-  padding-left: 25px;
+  padding: 25px 0 0 25px;
 }
 
 .sidebar-btn {
@@ -33,7 +33,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: rgb(236,233,230);
+  background: linear-gradient(150deg, rgba(236,233,230,0.7), rgb(255,255,255));
 }
 
 /* When you mouse over the navigation links, change their color */
