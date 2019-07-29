@@ -8,9 +8,16 @@
   left: 0;
   background: linear-gradient(90deg, rgba(236,233,230,0.4), rgb(255,255,255));
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
+  // padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  padding: 0 20px 0 auto;
 
+}
+
+.sidebar #avatar {
+  width: 40px;
+  border-radius: 50%;
+  padding: 20px 15px 20px 25px;
 }
 
 /* The sidebar links */

@@ -1,9 +1,31 @@
 <div id="mySidebar" class="sidebar">
-  <%= link_to "ADD MAP", new_map_path, class: "links main-btn" %>
+  <div id="avatar">
+    <% if current_user.avatar.present? %>
+      <%= cl_image_tag current_user.avatar.url(:avatar), class: "avatar"  %>
+    <% else %>
+      <%= image_tag "avatar.png",  class:"avatar" %>
+    <% end %>
+  </div>
+
   <a href="javascript:void(0)" class="closebtn" id='close-nav'>&times;</a>
-  <%= render 'layouts/shared/map_list' %>
+  <h2>My maps</h2>
+  <% @my_maps.each do |map|  %>
+    <%= link_to render('layouts/shared/sidebar-card', map: map), map_path(map)%>
+  <% end %>
+  <h2>Shared maps</h2>
+  <% if @shared_maps.exists? %>
+   <% @shared_maps.each  do |shared_map| %>
+    <%= link_to render('layouts/shared/sidebar-card', map: shared_map), map_path(shared_map) %>
+    <% end %>
+  <% end %>
+
   <%= render 'layouts/shared/logout_button' %>
+  <%= link_to "ADD MAP", new_map_path, class: "links main-btn" %>
 </div>
 <div id="main">
   <button class="openbtn" id='open-nav'><i class="fas fa-bars"></i></button>
 </div>
+
+
+
+

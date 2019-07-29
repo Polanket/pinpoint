@@ -1,0 +1,25 @@
+.sidebar-card {
+  overflow: hidden;
+  height: 80px;
+  width: 300px;
+  margin: auto 25px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+.sidebar-card p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.sidebar-card .sidebar-card-infos {
+  padding: 16px;
+}
