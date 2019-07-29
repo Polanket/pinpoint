@@ -1,73 +1,74 @@
  /* The sidebar menu */
 .sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
-  background: linear-gradient(90deg, rgba(236,233,230,0.4), rgb(255,255,255));
+  background: linear-gradient(to right, rgba(236,233,230,0.7), rgb(255,255,255));
   overflow-x: hidden; /* Disable horizontal scroll */
-  // padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
-  padding: 0 20px 0 auto;
-
 }
 
-.sidebar #avatar {
-  width: 40px;
-  border-radius: 50%;
-  padding: 20px 15px 20px 25px;
+/* wrap content displaying maps*/
+.sidebar-container {
+  flex-basis: 250px;
+  padding-left: 25px;
 }
-
-/* The sidebar links */
-.sidebar .links {
-  // padding: 8px 8px 8px 8px;
+.sidebar-container a {
   text-decoration: none;
-  font-size: 22px;
-  line-height: 26px;
-  color: #FFFFFF;
-  display: block;
-  transition: 0.3s;
-  width: 155.3px;
-  margin: auto;
-  margin-bottom: 10px;
+}
+.sidebar-container-avatar {
+  padding: 25px 0 0 25px;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidebar a:hover {
-  color: #818181;
+.sidebar-btn {
+  position: sticky;
+  bottom: 25px;
+  min-height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(150deg, rgba(236,233,230,0.7), rgb(255,255,255));
 }
 
 /* Position and style the close button (top right corner) */
 .sidebar .closebtn {
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 40px;
+  top: 25;
+  right: 32px;
+  font-size: 56px;
   margin-left: 50px;
-  color: white;
+  color: purple;
+  text-decoration: none;
 }
 
 /* The button used to open the sidebar */
 .openbtn {
-  margin: 10px 15px;
-  height: 70px;
-  width: 70px;
-  font-size: 40px;
+  margin-top: 10px;
+  height: 50px;
+  width: 50px;
+  font-size: 32px;
   cursor: pointer;
-  color: white;
-  background: linear-gradient(97.34deg, #CC2B5E 0%, rgba(198, 35, 87, 0.516328) 51.35%, rgba(206, 52, 101, 0) 100%), linear-gradient(270deg, #753A88 0%, rgba(117, 58, 136, 0) 100%);
+  color: white ;
+  background: linear-gradient(97.34deg, #CC2B5E 0%, rgba(198, 35, 87, 0.5), rgba(206, 52, 101, 0) 100%), linear-gradient(270deg, #753A88 0%, rgba(117, 58, 136, 0) 100%);
   border: none;
   position: fixed;
   z-index: 2;
   vertical-align: middle;
-  border-radius: 50%;
+  border-radius: 0 25% 25% 0;
 }
 
 .openbtn:hover {
-  background: transparent;
   color: gray;
+  box-shadow: 0 0 35px rgba(255,255,255,0.3);
+}
+button {
+  padding: 0px;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
