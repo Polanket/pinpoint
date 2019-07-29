@@ -21,6 +21,7 @@
   </div>
   <div class="sidebar-btn">
     <%= link_to "ADD MAP", new_map_path, class: "main-btn" %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
   </div>
 </div>
 <div id="main">

@@ -1,9 +1,9 @@
 <div class= "sidebar-card" >
   <div>
     <% if user.avatar.present? %>
-      <%= cl_image_tag user.avatar.url(:avatar), class: "avatar"  %>
+      <%= cl_image_tag user.avatar.url(:avatar), class: "avatar-bordered"  %>
     <% else %>
-      <%= image_tag "avatar.png",  class:"avatar" %>
+      <%= image_tag "avatar.png",  class: "avatar-bordered" %>
     <% end %>
   </div>
   <div class="sidebar-card-infos">
