@@ -36,40 +36,36 @@
   background: linear-gradient(150deg, rgba(236,233,230,0.7), rgb(255,255,255));
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidebar a:hover {
-  color: #818181;
-}
-
 /* Position and style the close button (top right corner) */
 .sidebar .closebtn {
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 40px;
+  top: 25;
+  right: 32px;
+  font-size: 56px;
   margin-left: 50px;
-  color: white;
+  color: purple;
+  text-decoration: none;
 }
 
 /* The button used to open the sidebar */
 .openbtn {
-  margin: 10px 15px;
-  height: 70px;
-  width: 70px;
-  font-size: 40px;
+  margin-top: 10px;
+  height: 50px;
+  width: 50px;
+  font-size: 32px;
   cursor: pointer;
-  color: white;
-  background: linear-gradient(97.34deg, #CC2B5E 0%, rgba(198, 35, 87, 0.516328) 51.35%, rgba(206, 52, 101, 0) 100%), linear-gradient(270deg, #753A88 0%, rgba(117, 58, 136, 0) 100%);
+  color: white ;
+  background: linear-gradient(97.34deg, #CC2B5E 0%, rgba(198, 35, 87, 0.5), rgba(206, 52, 101, 0) 100%), linear-gradient(270deg, #753A88 0%, rgba(117, 58, 136, 0) 100%);
   border: none;
   position: fixed;
   z-index: 2;
   vertical-align: middle;
-  border-radius: 50%;
+  border-radius: 0 25% 25% 0;
 }
 
 .openbtn:hover {
-  background: transparent;
   color: gray;
+  box-shadow: 0 0 35px rgba(255,255,255,0.3);
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
