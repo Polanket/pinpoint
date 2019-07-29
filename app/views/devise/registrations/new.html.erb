@@ -1,6 +1,6 @@
 <div class="registration-form">
-  <h1>Welcome!</h1>
-  <p>Create a pinpoint account and never lose track of your favorite locations</p>
+  <h1 class="pintitle1">Welcome!</h1>
+  <p class="pintextgray">Create a pinpoint account and never lose track of your favorite locations</p>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
@@ -25,12 +25,12 @@
       <%= f.input :avatar_cache, as: :hidden %>
     </div>
 
-    <div class="terms-and-conditions">
+   <!--  <div class="terms-and-conditions">
       <div class="terms-button">
         <div class="terms-circle"></div>
       </div>
       <p>Accept terms & conditions</p>
-    </div>
+    </div> -->
 
     <div class="margin-register">
       <%= f.button :submit, "SIGN UP", class: "main-btn" %>

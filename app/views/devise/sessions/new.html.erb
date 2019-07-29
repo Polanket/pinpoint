@@ -1,6 +1,6 @@
 <div class="login-form">
-  <h1>Welcome back!</h1>
-  <p>Log in to access your map(s)</p>
+  <h1 class="pintitle1">Welcome back!</h1>
+  <p class="pintextgray">Log in to access your map(s)</p>
 
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -12,7 +12,7 @@
       <%= f.input :password,
                   required: false,
                   input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean, wrapper_html: {style: "margin-bottom: 8px; padding: 0;"} if devise_mapping.rememberable?  %>
+      <%= f.input :remember_me, as: :boolean, wrapper_html: {style: "border: none; margin-bottom: 8px; padding: 0;"} if devise_mapping.rememberable?  %>
       <div class="password-lost">
         <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
       </div>

@@ -3,7 +3,7 @@
   width: 100vw;
   height: 100vh;
   margin: auto;
-  margin-top: 25px;
+  margin-top: 10px;
   align-content: center;
   display: flex;
   flex-direction: column;
@@ -11,68 +11,58 @@
   align-items: center;
 }
 
-.registration-form h1 {
-  font-family: $headers-font;
-  margin-bottom: 0;
-}
-
-.registration-form p {
-  font-family: $body-font;
-  padding: 17px 25px 0px 25px;
-  align-self: center;
-  margin-top: 0;
-  color: rgba(50, 47, 47, 0.8);
-}
-
 .form-inputs {
   display: flex;
   flex-direction: column;
   align-items: left;
   width: 300px;
-  padding: 25px 25px 0px 25px;
+  padding: 15px 15px 0px 15px;
   font-family: $body-font;
   input {
     border: none;
     border-bottom: 1px solid rgb(112,112,112);
     width: 100%;
   }
-  fieldset{
-    border:white;
-  }
   .form-group {
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     text-align: left;
     color: #C4C4C4;
   }
 }
 
 .form-control {
-  height: 20px;
+  height: 15px;
   background-color: white;
 }
 
-.terms-and-conditions {
-  display: inline-flex;
-  margin-bottom: 20px;
-  .terms-button {
-      width: 45px;
-      height: 18px;
-      border-radius: 50px;
-      background: #DDDDDD;
-      align-self: center;
-    .terms-circle {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: #7A7979;
-    }
-  }
+.form-control-label {
+  font-size: 10px;
 }
+
 
 .margin-register {
   margin-bottom: 15px;
 }
 
+
+// toggle button for accept terms and conditions
+// .terms-and-conditions {
+//   display: inline-flex;
+//   margin-bottom: 20px;
+//   .terms-button {
+//       width: 45px;
+//       height: 18px;
+//       border-radius: 50px;
+//       background: #DDDDDD;
+//       align-self: center;
+//     .terms-circle {
+//       width: 18px;
+//       height: 18px;
+//       border-radius: 50%;
+//       background: #7A7979;
+//     }
+//   }
+// }
 
 
 
