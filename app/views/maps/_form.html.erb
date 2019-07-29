@@ -1,9 +1,9 @@
 <%= simple_form_for map do |f| %>
 <div class="form-inputs">
   <%= f.input :name, placeholder: 'Map Subject' %>
-</div>
-<div class="form-inputs">
   <%= f.input :description, as: :string, placeholder: 'What is this map about?' %>
+  <%= f.input :photo, required: true %>
+  <%= f.input :photo_cache, as: :hidden %>
 </div>
 <%= f.button :submit, class: "main-btn" %>
 <% end %>

@@ -1,9 +1,15 @@
 <div id="mySidebar" class="sidebar">
-  <%= link_to "ADD MAP", new_map_path, class: "links main-btn" %>
+
   <a href="javascript:void(0)" class="closebtn" id='close-nav'>&times;</a>
+  <%= render 'layouts/shared/sidebar-card' %>
   <%= render 'layouts/shared/map_list' %>
   <%= render 'layouts/shared/logout_button' %>
+  <%= link_to "ADD MAP", new_map_path, class: "links main-btn" %>
 </div>
 <div id="main">
   <button class="openbtn" id='open-nav'><i class="fas fa-bars"></i></button>
 </div>
+
+
+
+

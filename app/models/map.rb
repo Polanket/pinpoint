@@ -1,4 +1,5 @@
 class Map < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   belongs_to :user
   has_many :added_locations, dependent: :destroy
   has_many :user_groups

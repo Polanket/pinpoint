@@ -1,0 +1,15 @@
+<% @my_maps.each do |map| %>
+  <div class= "sidebar-card" >
+    <div>
+      <% if current_user.avatar.present? %>
+        <%= cl_image_tag map.photo.url(:avatar), class: "avatar"  %>
+      <% else %>
+        <%= image_tag "avatar.png",  class:"avatar-large" %>
+      <% end %>
+    </div>
+    <div class="sidebar-card-infos">
+      <h2>Map name name</h2>
+      <p>Map description with <strong>relevant info</strong> only.</p>
+    </div>
+  </div>
+<% end %>
