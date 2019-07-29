@@ -2,7 +2,7 @@ class MapQueriesController < ApplicationController
   def create
     authorize current_map
 
-    @markers = GPClient.spots_by_query(params[:query], details: true, multipage: true).map do |spot|
+    @markers = GPClient.spots_by_query(params[:query], detail: true).map do |spot|
       {
         lat: spot.lat,
         lng: spot.lng,

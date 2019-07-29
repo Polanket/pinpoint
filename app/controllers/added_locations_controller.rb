@@ -6,10 +6,11 @@ class AddedLocationsController < ApplicationController
       .added_locations
       .where(latitude: location.lat, longitude: location.lng)
       .first_or_create(
-          name: location.name,
-          address: location.formatted_address,
-          description: "Placeholder description",
-          photo: location.photos[0].fetch_url(800)
+        name: location.name,
+        address: location.formatted_address,
+        open_now: location.opening_hours[:open_now],
+        description: "Placeholder description",
+        photo: location.photos[0].fetch_url(800)
       )
     @markers = marker_composer(current_map).compose
   end
