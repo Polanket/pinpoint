@@ -4,6 +4,7 @@
   width: 300px;
   display: flex;
   align-items: center;
+  padding:0 4px;
 }
 
 .sidebar-card h2 {
@@ -18,6 +19,8 @@
 }
 
 .sidebar-card .sidebar-card-infos {
-  padding: 8px;
+  min-width: 200px;
+  padding-left: 8px;
+
 }
 
