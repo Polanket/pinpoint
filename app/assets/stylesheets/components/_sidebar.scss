@@ -16,10 +16,14 @@
 
 /* wrap content displaying maps*/
 .sidebar-container {
+  flex-basis: 250px;
   padding-left: 25px;
 }
 .sidebar-container a {
   text-decoration: none;
+}
+.sidebar-container-avatar {
+  padding-left: 25px;
 }
 
 .sidebar-btn {
