@@ -3,7 +3,6 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
-  // justify-content: space-around;
 }
 
 .pin-container img {
@@ -14,8 +13,12 @@
 
 .flex-item{
   margin-bottom: 35px;
-  // margin-top: 50px;
 }
+
+.pin-container .pintextgray {
+  max-width: 350px;
+}
+
 
 #main-page-margin {
   margin-bottom: 90px;

@@ -1,6 +1,6 @@
 @media (min-width: 700px) {
   .pin-container img {
-    width: 450px;
+    width: 420px;
     margin-top: 50px;
   }
 
@@ -11,9 +11,18 @@
   }
 
   .ghost-btn {
-    padding: 15px 38px;
+    padding: 14px 33px;
     letter-spacing: 3px;
     font-size: 28px;
+  }
+
+  .pin-container .pintitle1 {
+    font-size: 36px;
+  }
+
+  .pin-container .pintextgray {
+    font-size: 20px;
+    max-width: 500px;
   }
 
   .flex-item{
