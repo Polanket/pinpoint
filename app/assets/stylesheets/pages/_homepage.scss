@@ -3,7 +3,7 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-around;
 }
 
 .pin-container img {
@@ -11,14 +11,6 @@
   margin: auto;
   margin-top: 50px;
 }
-
- .pin-container h1 {
-    font-family: $headers-font;
-  }
-
-.pin-container p {
-    font-family: $body-font;
-  }
 
 .flex-item{
   margin-bottom: 35px;
