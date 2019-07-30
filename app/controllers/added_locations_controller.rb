@@ -15,6 +15,9 @@ class AddedLocationsController < ApplicationController
     @markers = marker_composer(current_map).compose
   end
 
+  def show
+  end
+
   private
 
   def marker_composer(map)
