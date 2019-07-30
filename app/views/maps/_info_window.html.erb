@@ -1,9 +1,13 @@
 <div class="location-card-container">
   <div class="location-card">
-  <div class="location-image"><%= image_tag spot.photos[0].fetch_url(800) %></div>
+    <% if spot.photos.present? %>
+      <div class="location-image"><%= image_tag spot.photos[0].fetch_url(800) %></div>
+    <% end %>
       <div class="location-card-content">
         <h2 class="location-card-title"><%= spot.name %></h2>
-        <p class="location-card-text-gray"><%= spot.opening_hours[:open_now] ? 'Open' : 'Closed' %></p>
+        <% if spot.opening_hours.present? %>
+          <p class="location-card-text-gray"><%= spot.opening_hours[:open_now] ? 'Open' : 'Closed' %></p>
+        <% end %>
         <p class="location-card-text"><%= spot.formatted_address %></p>
         <%= link_to 'PIN IT', save_marker_path(@map, spot.place_id), method: :post, remote: true, class:"location-card-btn main-btn" %>
       </div>
