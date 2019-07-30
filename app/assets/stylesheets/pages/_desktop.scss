@@ -38,11 +38,11 @@
   }
 
   .registration-form h1 {
-    font-size: 2.5em;
+    font-size: 40px;
   }
 
   .registration-form p {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .form-inputs {
@@ -56,18 +56,19 @@
     }
   }
 
-  .form-control-label {
-      font-size: 15px;
-    }
 
   .form-control {
-    height: 20px;
+    height: 30px;
+  }
+
+  .form-control-label {
+      font-size: 20px;
   }
 
   .login-form {
     margin-top: 30px;
-
   }
+
   .login-form h1 {
     font-size: 2.5em;
   }
