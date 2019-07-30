@@ -28,7 +28,7 @@ module Composers
     def parse_locations(added_location)
       { lat: added_location.latitude,
         lng: added_location.longitude,
-        infoWindow: ApplicationController.new.render_to_string(partial: 'maps/added_info_window', locals: { spot: added_location }) }
+        infoWindow: ApplicationController.render(partial: 'maps/added_info_window', locals: { spot: added_location }) }
     end
   end
 end

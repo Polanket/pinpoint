@@ -4,6 +4,10 @@
   vertical-align: middle;
 }
 
+.location-image img {
+  width: 100%;
+}
+
 .location-card-btn {
   padding: 0.8rem;
   font-size: 14px;
@@ -15,7 +19,7 @@
 
 .location-card-container {
   display: flex;
-  width: 100%;
+  max-width: 300px;
 }
 
 .location-card {
@@ -29,7 +33,6 @@
 
 .location-card-content {
   padding: 1rem;
-  // background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
 }
 
 .location-card-title {
@@ -55,4 +58,20 @@
   line-height: 1.5;
   margin-bottom: 1.25rem;
 }
+
+.mapboxgl-popup-content {
+  padding: 0;
+  max-width: 300px;
+}
+
+.mapboxgl-container .leaflet-marker-icon {
+  cursor: pointer;
+}
+
+.mapboxgl-popup {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
 

@@ -3,29 +3,25 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
-  justify-content: space-between;
 }
 
 .pin-container img {
   width: 330px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 60px;
 }
-
- .pin-container h1 {
-    font-family: $headers-font;
-  }
-
-.pin-container p {
-    font-family: $body-font;
-  }
 
 .flex-item{
   margin-bottom: 35px;
 }
 
+.pin-container .pintextgray {
+  max-width: 350px;
+}
+
+
 #main-page-margin {
-  margin-bottom: 100px;
+  margin-bottom: 90px;
 }
 
 #main-page-p {
@@ -33,5 +29,5 @@
 }
 
 #home-page-margin {
-  // margin-top: 5px;
+  margin-top: 25px;
 }

@@ -3,7 +3,7 @@
   width: 100vw;
   height: 100vh;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 10px;
   align-content: center;
   display: flex;
   flex-direction: column;
@@ -16,18 +16,16 @@
   flex-direction: column;
   align-items: left;
   width: 300px;
-  padding: 20px 20px 0px 20px;
+  padding: 15px 15px 0px 15px;
   font-family: $body-font;
   input {
     border: none;
     border-bottom: 1px solid rgb(112,112,112);
     width: 100%;
   }
-  fieldset{
-    border:white;
-  }
+  
   .form-group {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     text-align: left;
     color: #C4C4C4;
   }
@@ -38,10 +36,15 @@
   background-color: white;
 }
 
+.form-control-label {
+  font-size: 10px;
+}
+
 .margin-register {
   margin-bottom: 5px;
 }
 
+// toggle button for accept terms and conditions
 // .terms-and-conditions {
 //   display: inline-flex;
 //   margin-bottom: 20px;
@@ -59,9 +62,3 @@
 //     }
 //   }
 // }
-
-
-
-
-
-

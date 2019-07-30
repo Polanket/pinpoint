@@ -1,11 +1,14 @@
 import mapboxgl from 'mapbox-gl';
 import markerIcon from '../images/added_location.png';
 
+const popupOptions = {
+  maxWidth: '300px'
+}
 // Places markers received from maps controller (checks if multiple markers or single lat lng combination)
 const placeMarkers = (map, markers) => {
   if (Array.isArray(markers) && markers) {
     markers.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+      const popup = new mapboxgl.Popup(popupOptions).setHTML(marker.infoWindow);
       const custom_marker = customMarker(marker);
       new mapboxgl.Marker(custom_marker)
         .setLngLat([ marker.lng, marker.lat])
@@ -15,7 +18,7 @@ const placeMarkers = (map, markers) => {
     });
 
   } else {
-    const popup = new mapboxgl.Popup().setHTML(markers.infoWindow);
+    const popup = new mapboxgl.Popup(popupOptions).setHTML(markers.infoWindow);
     const custom_marker = customMarker(markers);
     new mapboxgl.Marker(custom_marker)
       .setLngLat([ markers.lng, markers.lat ])
@@ -54,7 +57,6 @@ const customMarker = (marker) => {
   element.style.backgroundImage = `url('${marker.image_url || markerIcon}')`;
   element.style.backgroundSize = 'contain';
   element.style.backgroundRepeat = 'no-repeat';
-  element.style.zIndex = "1";
   element.style.width = '42.5px';
   element.style.height = '60px';
   return element;
