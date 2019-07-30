@@ -4,16 +4,16 @@
       <%= image_tag 'logo.png' %>
     </div>
 
-    <div class="flex-item" id = "main-page-margin" style="max-width: 400px; color: gray;">
-      <h1>See, Save, Share</h1>
-      <p>Pinpoint allows you to save your favorite locations and to create interactive maps with your friends and colleagues.</p>
+    <div class="flex-item" id = "main-page-margin">
+      <h1 class="pintitle1" style="color: gray;">See, Save, Share</h1>
+      <p class="pintextgray" id="main-page-p">Pinpoint allows you to save your favorite locations and to create interactive maps with your friends and colleagues.</p>
     </div>
 
     <div class="flex-item">
       <%= link_to "SIGN UP", new_user_registration_path, class: "main-btn" %>
     </div>
 
-    <div class="flex-item index-margin">
+    <div id="home-page-margin">
       <%= link_to "LOG IN", new_user_session_path, class: "ghost-btn" %>
     </div>
 </div>

@@ -7,10 +7,9 @@
 }
 
 .pin-container img {
-  width: 300px;
+  width: 330px;
   margin: auto;
-  // margin-bottom: 80px;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
  .pin-container h1 {
@@ -22,9 +21,17 @@
   }
 
 .flex-item{
-  margin-bottom: 50px;
+  margin-bottom: 35px;
 }
 
 #main-page-margin {
   margin-bottom: 100px;
+}
+
+#main-page-p {
+  max-width: 400px
+}
+
+#home-page-margin {
+  // margin-top: 5px;
 }

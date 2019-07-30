@@ -1,40 +1,37 @@
 @media (min-width: 700px) {
   .pin-container img {
-    width: 450px;
-    // margin-bottom: 100px;
-    margin-top: 20px;
+    width: 420px;
+    margin-top: 40px;
   }
   .main-btn {
-    padding: 20px 47.12px;
+    padding: 20px 47px;
     letter-spacing: 2px;
     font-size: 22px;
   }
   .ghost-btn {
-    padding: 25px 70px;
+    padding: 20px 47px;
     letter-spacing: 2px;
     font-size: 22px;
   }
   .flex-item{
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
-  .index-margin {
-    margin-top: 15px;
+  .pintitle1 {
+    font-size: 36px;
+  }
+  .pintextgray{
+    font-size: 20px;
+  }
+  #main-page-p {
+    max-width: 600px
   }
   .registration-form {
-    margin-top: 0px;
-  }
-  .registration-form h1 {
-    font-family: $headers-font;
-    font-size: 3em;
-  }
-  .registration-form p {
-    font-size: 20px;
-    // margin-bottom: 2px;
+    margin-top: 15px;
   }
   .form-inputs {
     width: 500px;
     .form-group {
-      margin-bottom: 35px;
+      margin-bottom: 30px;
     }
     input {
       font-size: 20px;
@@ -44,34 +41,30 @@
       font-size: 22px;
     }
   .form-control {
-    height: 30px;
+    height: 25px;
     background-color: white;
   }
-  .terms-and-conditions {
-    margin-bottom: 20px;
-    .terms-button {
-        width: 55px;
-        height: 22px;
-      .terms-circle {
-        width: 22px;
-        height: 22px;
-      }
-    }
-  }
   .login-form {
-    margin-top: 5px;
-  }
-  .login-form h1 {
-    font-size: 3em;
-  }
-  .login-form p {
-    font-size: 20px;
+    margin-top: 30px;
   }
   .password-lost {
     margin-bottom: 100px;
     font-size: 20px;
   }
 }
+
+// CSS for toggle button to 'accept terms and conditions'
+  // .terms-and-conditions {
+  //   margin-bottom: 20px;
+  //   .terms-button {
+  //       width: 55px;
+  //       height: 22px;
+  //     .terms-circle {
+  //       width: 22px;
+  //       height: 22px;
+  //     }
+  //   }
+  // }
 
 
 
