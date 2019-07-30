@@ -10,7 +10,7 @@ class AddedLocationsController < ApplicationController
         address: location.formatted_address,
         open_now: location.opening_hours[:open_now],
         description: "Placeholder description",
-        photo: location.photos[0].fetch_url(800)
+        photo: location.photos[0].fetch_url(400)
       )
     @markers = marker_composer(current_map).compose
   end
