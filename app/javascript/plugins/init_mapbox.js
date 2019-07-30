@@ -62,8 +62,9 @@ const customMarker = (marker) => {
 
 const initMapbox = () => {
   const mapDiv = document.getElementById('map');
-  const markers = JSON.parse(mapDiv.dataset.markers);
   if (mapDiv) {
+    const markers = JSON.parse(mapDiv.dataset.markers);
+
     mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
     window.map = new mapboxgl.Map({
       container: 'map',

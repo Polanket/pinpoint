@@ -1,7 +1,8 @@
 <div class="pin-container registration-form">
   <h1>Create a shared map!</h1>
-
-  <%= render 'form', map: @map %>
+  <div>
+    <%= render 'form', map: @map, user_group: @user_group %>
+  </div>
 
   <%= link_to "GO BACK", map_path(current_user.owned_maps.first), class: "ghost-btn" %>
 </div>

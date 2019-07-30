@@ -17,13 +17,21 @@ class MapsController < ApplicationController
     @map.user = current_user
     authorize @map
     if @map.save
-      redirect_to new_map_user_group_path(@map)
+      create_user_groups
+      redirect_to map_path(@map)
     else
       render :new
     end
   end
 
   private
+
+  def create_user_groups
+    users = params['map'][:user_id].drop(1)
+    users.each do |user|
+      UserGroup.create(user_id:user.to_i, map: @map)
+    end
+  end
 
   def marker_composer(map)
     ::Composers::Markers.new(map)
