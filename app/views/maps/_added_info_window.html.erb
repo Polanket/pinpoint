@@ -9,7 +9,6 @@
           <p class="location-card-text-gray"><%= spot.open_now ? 'Open' : 'Closed' %></p>
         <% end %>
         <p class="location-card-text"><%= spot.address %></p>
-        <%= link_to 'VIEW', map_added_location_path(spot.map_id, spot.id), method: :post, remote: true, class:"location-card-btn main-btn" %>
       </div>
   </div>
 </div>
