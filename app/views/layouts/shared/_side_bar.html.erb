@@ -1,6 +1,7 @@
 <div id="mySidebar" class="sidebar">
   <div class="sidebar-container-avatar">
     <%= render 'layouts/shared/sidebar-card-avatar', user: current_user%>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
   </div>
 
   <a href="javascript:void(0)" class="closebtn" id='close-nav'>&times;</a>
@@ -21,7 +22,6 @@
   </div>
   <div class="sidebar-btn">
     <%= link_to "ADD MAP", new_map_path, class: "main-btn" %>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
   </div>
 </div>
 <div id="main">

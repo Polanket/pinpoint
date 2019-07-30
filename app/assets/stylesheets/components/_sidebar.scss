@@ -18,6 +18,7 @@
 .sidebar-container {
   flex-basis: 250px;
   padding-left: 25px;
+  flex-grow: 1;
 }
 .sidebar-container a {
   text-decoration: none;
@@ -28,7 +29,7 @@
 
 .sidebar-btn {
   position: sticky;
-  bottom: 25px;
+  bottom: 50px;
   min-height: 80px;
   display: flex;
   justify-content: space-around;
