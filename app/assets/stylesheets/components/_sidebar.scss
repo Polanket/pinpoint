@@ -18,6 +18,7 @@
 .sidebar-container {
   flex-basis: 250px;
   padding-left: 25px;
+  flex-grow: 1;
 }
 .sidebar-container a {
   text-decoration: none;
