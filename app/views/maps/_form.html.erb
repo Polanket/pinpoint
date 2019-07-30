@@ -4,6 +4,9 @@
   <%= f.input :description, as: :string, placeholder: 'What is this map about?' %>
   <%= f.input :photo, required: true %>
   <%= f.input :photo_cache, as: :hidden %>
+  <div id="users">
+    <%= f.association :user, label_method: :name, input_html: { multiple: true, class: 'select2' },label: 'Add friends' %>
+  </div>
 </div>
   <%= f.button :submit, class: "main-btn", style: "margin-top: 40px;" %>
 <% end %>
