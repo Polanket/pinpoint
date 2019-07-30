@@ -1,0 +1,13 @@
+<div class= "sidebar-card" >
+  <div>
+    <% if user.avatar.present? %>
+      <%= cl_image_tag user.avatar.url(:avatar), class: "avatar-bordered"  %>
+    <% else %>
+      <%= image_tag "avatar.png",  class: "avatar-bordered" %>
+    <% end %>
+  </div>
+  <div class="sidebar-card-infos">
+    <h2 class="pintextblack"><%= user.name %></h2>
+    <p class="pintextgray"><%= user.email %></p>
+  </div>
+</div>

@@ -2,15 +2,20 @@ class AddedLocationsController < ApplicationController
   def create
     authorize current_map
     location = GPClient.spot(params[:marker_id])
-    current_map.added_locations
-    .where(latitude: location.lat, longitude: location.lng)
-    .first_or_create(
+    current_map
+      .added_locations
+      .where(latitude: location.lat, longitude: location.lng)
+      .first_or_create(
         name: location.name,
         address: location.formatted_address,
+        open_now: location.opening_hours[:open_now],
         description: "Placeholder description",
-        photo: location.photos[0].fetch_url(800)
-    )
+        photo: location.photos[0].fetch_url(400)
+      )
     @markers = marker_composer(current_map).compose
+  end
+
+  def show
   end
 
   private

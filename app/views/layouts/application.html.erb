@@ -30,7 +30,7 @@
     <%= favicon_link_tag %>
   </head>
   <body>
-    <% if current_user %>
+    <% if current_user.present? %>
       <%= render 'layouts/shared/side_bar'  %>
     <% end %>
    <!--  <% render 'shared/flashes' %> -->

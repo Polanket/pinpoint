@@ -1,1 +1,15 @@
-<h2><%= spot.name %></h2>
+<div class="location-card-container">
+  <div class="location-card">
+    <% if spot.photo.present? %>
+      <div class="location-image"><%= image_tag spot.photo %></div>
+    <% end %>
+      <div class="location-card-content">
+        <h2 class="location-card-title"><%= spot.name %></h2>
+        <% if spot.open_now.present? %>
+          <p class="location-card-text-gray"><%= spot.open_now ? 'Open' : 'Closed' %></p>
+        <% end %>
+        <p class="location-card-text"><%= spot.address %></p>
+        <%= link_to 'VIEW', map_added_location_path(spot.map_id, spot.id), method: :get, class:"location-card-btn main-btn" %>
+      </div>
+  </div>
+</div>
