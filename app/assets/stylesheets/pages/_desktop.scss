@@ -1,54 +1,74 @@
 @media (min-width: 700px) {
   .pin-container img {
-    width: 420px;
-    margin-top: 50px;
+    width: 450px;
+    margin-top: 40px;
   }
+  
   .main-btn {
-    padding: 20px 47px;
-    letter-spacing: 2px;
-    font-size: 22px;
+    padding: 14px 33px;
+    letter-spacing: 3px;
+    font-size: 28px;
   }
+  
   .ghost-btn {
-    padding: 20px 47px;
-    letter-spacing: 2px;
-    font-size: 22px;
+    padding: 15px 38px;
+    letter-spacing: 3px;
+    font-size: 28px;
   }
+  
   .flex-item{
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
-  .pintitle1 {
-    font-size: 36px;
+  
+  .index-margin {
+    margin-top: 20px;
   }
-  .pintextgray{
-    font-size: 20px;
-  }
-  #main-page-p {
-    max-width: 600px
-  }
+  
   .registration-form {
-    margin-top: 15px;
+    margin-top: 20px;
   }
+  
+  .registration-form h1 {
+    font-size: 2.5em;
+  }
+  
+  .registration-form p {
+    font-size: 18px;
+  }
+  
   .form-inputs {
     width: 500px;
     .form-group {
       margin-bottom: 30px;
     }
+    
     input {
       font-size: 20px;
     }
   }
+  
   .form-control-label {
-      font-size: 22px;
+      font-size: 15px;
     }
+  
   .form-control {
-    height: 25px;
-    background-color: white;
+    height: 20px;
   }
+  
   .login-form {
     margin-top: 30px;
+
   }
+  .login-form h1 {
+    font-size: 2.5em;
+  }
+  
+  .login-form p {
+    font-size: 18px;
+  }
+  
   .password-lost {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     font-size: 20px;
   }
 }
@@ -65,20 +85,3 @@
   //     }
   //   }
   // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
