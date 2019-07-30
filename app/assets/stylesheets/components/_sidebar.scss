@@ -49,7 +49,7 @@
 
 /* The button used to open the sidebar */
 .openbtn {
-  margin-top: 10px;
+  margin: 25px 0 0 10px;
   height: 50px;
   width: 50px;
   font-size: 32px;
@@ -60,13 +60,15 @@
   position: fixed;
   z-index: 2;
   vertical-align: middle;
-  border-radius: 0 25% 25% 0;
+  border-radius: 5px;
 }
 
 .openbtn:hover {
-  color: gray;
-  box-shadow: 0 0 35px rgba(255,255,255,0.3);
+  color: rgb(198,35,87);
+  background: transparent;
+  transition: 1s;
 }
+
 button {
   padding: 0px;
 }
@@ -81,3 +83,5 @@ button {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
+
+

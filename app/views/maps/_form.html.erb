@@ -5,7 +5,7 @@
   <%= f.input :photo, required: true,label_html: { style: 'font-size:12px;' }, input_html: { style: 'border-bottom:none;' } %>
   <%= f.input :photo_cache, as: :hidden %>
   <div id="users">
-    <%= f.association :user, label_method: :name, input_html: { multiple: true, class: 'select2' },label: 'Add friends' %>
+    <%= f.association :user, label_method: :name, input_html: { multiple: true, class: 'select2', style: 'font-family:"Karla", "Helvetica", "sans-serif";' }, label: "Select friends" %>
   </div>
 </div>
   <%= f.button :submit, class: "main-btn", style: "margin-top: 40px;" %>
