@@ -14,11 +14,17 @@
 
 .sidebar-card p {
   opacity: 0.7;
-  margin-top: 2px;
+  font-family: $body-font;
+  font-size: 14px;
+  color: #7A7979;
+  margin: 0;
 }
 
 .sidebar-card h2 {
-  margin: 2px 0 8px 0;
+  font-family: $body-font;
+  font-size: 16px;
+  color: #000000;
+  margin: 0;
 }
 
 .sidebar-card .sidebar-card-infos {
@@ -42,5 +48,14 @@
 
 #icon {
   color: rgba(178,87,138,0.3);
+  margin-right: 5px;
+}
+
+.sidebar-card-avatar p {
+  opacity: 0.7;
+  font-family: $body-font;
+  font-size: 14px;
+  color: #7A7979;
+  margin: 0;
 }
 
