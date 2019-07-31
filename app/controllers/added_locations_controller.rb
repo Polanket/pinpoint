@@ -32,6 +32,6 @@ class AddedLocationsController < ApplicationController
   end
 
   def current_map
-    @map = Map.find(params[:map_id])
+    @map = Map.find(params[:id])
   end
 end
