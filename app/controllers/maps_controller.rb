@@ -28,8 +28,9 @@ class MapsController < ApplicationController
 
   def create_user_groups
     users = params['map'][:user_id].drop(1)
+    users << current_user.id
     users.each do |user|
-      UserGroup.create(user_id:user.to_i, map: @map)
+    UserGroup.create(user_id:user.to_i, map: @map)
     end
   end
 

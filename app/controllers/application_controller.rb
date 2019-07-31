@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
   def global_data
-    @my_maps = current_user.owned_maps
+    @my_maps = current_user.owned_maps.select { |map| map.users.empty?}
     @shared_maps = current_user.shared_maps
   end
 
