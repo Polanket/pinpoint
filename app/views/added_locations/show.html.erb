@@ -1,1 +1,13 @@
-<h1>This will be the location page</h1>
+<div class="location-page">
+
+  <div class="location-image-container">
+    <%= image_tag @location.photo.first, class:"location-image" %>
+  </div>
+
+  <div class="location-content-container">
+    <h1><%= @location.name %></h1>
+
+    <p><%= @location.address %></p>
+  </div>
+
+</div>

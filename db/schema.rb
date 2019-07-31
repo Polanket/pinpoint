@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_29_193527) do
+ActiveRecord::Schema.define(version: 2019_07_31_091246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,9 @@ ActiveRecord::Schema.define(version: 2019_07_29_193527) do
     t.string "photo"
     t.float "latitude"
     t.float "longitude"
-    t.boolean "open_now"
+    t.string "url"
+    t.string "phone_number"
+    t.string "types"
     t.index ["map_id"], name: "index_added_locations_on_map_id"
   end
 

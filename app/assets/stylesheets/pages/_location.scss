@@ -1,0 +1,22 @@
+.location-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.location-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.location-image {
+  height: 33vh;
+  width: auto;
+}
+
+.location-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
