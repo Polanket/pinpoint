@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 50vw;
+  height: 100%;
+  margin: 16px auto;
 }
 
 .location-image-container {
@@ -10,8 +13,8 @@
 }
 
 .location-image {
-  height: 33vh;
-  width: auto;
+  height: auto;
+  width: 50vw;
 }
 
 .location-content-container {
@@ -19,4 +22,22 @@
   flex-direction: column;
   justify-content: center;
   margin: auto;
+  width: 50vw;
+}
+
+.location-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location-content-container h1 {
+  margin: 8px 0;
+  font-family: $headers-font;
+}
+
+.location-content-container p {
+  margin: 0 0 8px 0;
+  font-family: $body-font;
+  color: $grey-font;
 }

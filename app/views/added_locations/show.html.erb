@@ -5,9 +5,16 @@
   </div>
 
   <div class="location-content-container">
-    <h1><%= @location.name %></h1>
-
+    <div class="location-details">
+      <h1><%= @location.name %></h1>
+      <p><%= @location.types.first.capitalize %></p>
+    </div>
     <p><%= @location.address %></p>
   </div>
+
+  <div class="location-tabs">
+
+  </div>
+
 
 </div>

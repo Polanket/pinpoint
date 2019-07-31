@@ -6,8 +6,6 @@ import { initNav } from '../plugins/init_sidebar';
 
 import { initSelect2 } from '../plugins/init_select2';
 
-
-
 // import '../plugins/search_box';
 
 window.mapbox = initMapbox;
