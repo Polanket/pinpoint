@@ -9,7 +9,7 @@
           <p class="location-card-text-gray"><%= spot.opening_hours[:open_now] ? 'Open' : 'Closed' %></p>
         <% end %>
         <p class="location-card-text"><%= spot.formatted_address %></p>
-        <%= link_to 'PIN IT', save_marker_path(@map, spot.place_id), method: :post, remote: true, class:"location-card-btn main-btn" %>
+        <%= link_to 'PIN IT', save_marker_path(@map, spot.place_id), method: :post, remote: true, id:"add_marker_btn", class:"location-card-btn main-btn" %>
       </div>
   </div>
 </div>

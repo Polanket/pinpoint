@@ -17,10 +17,3 @@ initNav();
 initMapbox();
 
 initSelect2();
-
-
-
-
-
-
-
