@@ -1,4 +1,7 @@
 class AddedLocation < ApplicationRecord
+  serialize :types, Array
+  serialize :photo, Array
+
   belongs_to :map
   has_many :tags
 

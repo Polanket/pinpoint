@@ -8,14 +8,17 @@ class AddedLocationsController < ApplicationController
       .first_or_create(
         name: location.name,
         address: location.formatted_address,
-        open_now: location.opening_hours[:open_now],
-        description: "Placeholder description",
-        photo: location.photos[0].fetch_url(400)
+        url: location.url,
+        phone_number: location.phone_number,
+        types: location.types,
+        photo: location.photos
       )
     @markers = marker_composer(current_map).compose
   end
 
   def show
+    @location = AddedLocation.find(params[:id])
+    raise
   end
 
   private
