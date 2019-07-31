@@ -9,14 +9,13 @@ const placeMarkers = (map, markers) => {
   if (Array.isArray(markers) && markers) {
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup(popupOptions).setHTML(marker.infoWindow);
-      const custom_marker = customMarker(marker);
+      const custom_marker = customMarker(marker)
       new mapboxgl.Marker(custom_marker)
         .setLngLat([ marker.lng, marker.lat])
         .addTo(map)
         .setPopup(popup)
         .addTo(map);
     });
-
   } else {
     const popup = new mapboxgl.Popup(popupOptions).setHTML(markers.infoWindow);
     const custom_marker = customMarker(markers);
@@ -26,10 +25,10 @@ const placeMarkers = (map, markers) => {
       .setPopup(popup)
       .addTo(map);
 
-    // map.flyTo({
-    //   center: [ markers.lng, markers.lat ],
-    //   zoom: 14
-    // })
+    map.flyTo({
+      center: [ markers.lng, markers.lat ],
+      zoom: 14
+    });
   }
 };
 
