@@ -16,7 +16,7 @@
     <h2 class="pintitle2"><i class="fas fa-globe-europe"></i> Shared maps</h2>
     <% if @shared_maps.exists? %>
      <% @shared_maps.each  do |shared_map| %>
-      <%= link_to render('layouts/shared/sidebar-card', map: shared_map), map_path(shared_map) %>
+      <%= link_to render('layouts/shared/sidebar-card-shared-group', map: shared_map), map_path(shared_map) %>
       <% end %>
     <% end %>
   </div>
