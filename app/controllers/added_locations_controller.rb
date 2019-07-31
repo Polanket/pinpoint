@@ -9,25 +9,29 @@ class AddedLocationsController < ApplicationController
         name: location.name,
         address: location.formatted_address,
         url: location.url,
-        phone_number: location.phone_number,
+        description: 'Placeholder description',
+        phone_number: location.formatted_phone_number,
         types: location.types,
-        photo: location.photos
+        photo: location.photos.map { |photo| photo.fetch_url(400) }
       )
     @markers = marker_composer(current_map).compose
   end
 
   def show
-    @location = AddedLocation.find(params[:id])
-    raise
+    authorize added_location
   end
 
   private
+
+  def added_location
+    @location = AddedLocation.find(params[:id])
+  end
 
   def marker_composer(map)
     ::Composers::Markers.new(map)
   end
 
   def current_map
-    @map = Map.find(params[:id])
+    @map = Map.find(params[:map_id])
   end
 end

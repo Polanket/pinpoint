@@ -1,7 +1,13 @@
-<div class="location-image">
-  <%= image_tag @location.photo %>
-</div>
-<div class="location-content">
-  <h1><%= @location.name %></h1>
-  <p><%= @location.address %></p>
+<div class="location-page">
+
+  <div class="location-image-container">
+    <%= image_tag @location.photo.first, class:"location-image" %>
+  </div>
+
+  <div class="location-content-container">
+    <h1><%= @location.name %></h1>
+
+    <p><%= @location.address %></p>
+  </div>
+
 </div>
