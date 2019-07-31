@@ -7,6 +7,7 @@
   </div>
   <label class="add-photo" style="width: 150px; margin: 0px 30px 70px 0px;">
     Upload a photo!
+          <%= f.input :photo %>
     <span style="display:none;">
       <%= f.file_field :photo, required: true, multiple: true,label_html: { class: 'map-photo' }, input_html: { style: 'border-bottom:none;' }, name: 'photo' %>
       <%= f.input :photo_cache, as: :hidden %>
