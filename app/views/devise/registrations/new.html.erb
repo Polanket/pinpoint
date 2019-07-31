@@ -17,10 +17,18 @@
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password" } %>
-      <%= f.input :avatar,
-                  required: true,
-                  input_html: { autocomplete:
-                    "avatar" } %>
+      <label class="add-photo" style="width: 150px; margin: 0px 30px 70px 0px;">
+        Upload a photo!
+        <span style="display:none;">
+        <%= f.input :avatar,
+                    required: true,
+                    label_html: { class: 'map-photo' },
+                    input_html: { autocomplete:
+                    "avatar", style: 'border-bottom:none;' },
+                    name: 'avatar'
+                       %>
+                       </span>
+      </label>
       <%= f.input :avatar_cache, as: :hidden %>
     </div>
 
