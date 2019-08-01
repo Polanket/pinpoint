@@ -11,7 +11,6 @@ function addReview(reviewHTML) {
   reviews.insertAdjacentHTML('beforeend', reviewHTML);
 }
 
-
 <% if @review.errors.any? %>
   refreshForm('<%= j render "reviews/form",map: @map, added_location: @added_location, review: @review %>');
 <% else %>
