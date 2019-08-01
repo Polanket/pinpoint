@@ -3,60 +3,43 @@
   padding: 16px 8px 8px 8px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-
 }
 
-.review-card-avatar p {
+.review-card-user {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.review-card .review-card-infos {
+  flex-grow: 1;
+  padding-left: 16px;
+}
+
+.review-card-user p {
   opacity: 0.7;
   font-family: $body-font;
   font-size: 14px;
   color: #7A7979;
-  margin: 6px 0 6px 0;
+  margin: 0;
 }
 
-.review-card-avatar h2 {
+.review-card-user h2 {
   font-family: $body-font;
   font-size: 16px;
   color: #000000;
   margin: 0;
 }
 
-.review-card-avatar .review-card-infos {
-  display: flex;
-  justify-content: flex-start;
+.review-content {
+  padding: 4px 8px 0 16px;
+  font-family: $body-font;
+  font-size: 18px;
+  color: rgba(0,0,0,0.9);
+
 }
 
 
-// .sidebar-card {
-//   display: flex;
-//   overflow: hidden;
-//   height: 60px;
-//   width: 300px;
-//   align-items: center;
-//   padding:1px 25px;
-// }
 
-// .sidebar-card .content {
-//   flex-grow: 1;
-// }
 
-// .sidebar-card p {
-//   opacity: 0.7;
-//   font-family: $body-font;
-//   font-size: 14px;
-//   color: #7A7979;
-//   margin: 0;
-// }
 
-// .sidebar-card h2 {
-//   font-family: $body-font;
-//   font-size: 16px;
-//   color: #000000;
-//   margin: 0;
-// }
-
-// .sidebar-card .sidebar-card-infos {
-//   display: flex;
-//   flex-grow: 1;
-//   padding-left: 8px;
-// }
