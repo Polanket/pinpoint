@@ -17,7 +17,6 @@
 /* wrap content displaying maps*/
 .sidebar-container {
   flex-basis: 250px;
-  padding-left: 25px;
   flex-grow: 1;
 }
 .sidebar-container a {
@@ -65,9 +64,9 @@
 }
 
 .openbtn:hover {
-  color: rgb(198,35,87);
-  background: transparent;
-  transition: 1s;
+  box-shadow: 0 5px 3px rgba(206, 52, 101, 0.25);
+  box-shadow: 0 5px 5px rgba(117, 58, 136, 0.25);
+  box-shadow: 0 5px 7px rgba(198, 35, 87, 0.25);
 }
 
 .opacity {
