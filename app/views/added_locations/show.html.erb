@@ -7,12 +7,14 @@
   <div class="location-content-container">
     <div class="location-details">
       <h1 class="pintitle1" ><%= @added_location.name %></h1>
-      <p class="pintextgray"><%= @added_location.types.first.capitalize %></p>
+      <p class="pintextgray" style="margin-right: 8px;"><%= @added_location.types.first.capitalize %></p>
     </div>
-    <p><%= @added_location.address %></p>
+    <p class="pintextgray"><%= @added_location.address %></p>
     <div class="tag-link">
       <p class="tags pintextgray"><span>Tags:</span> <%= @added_location.tag_list %> </p>
-      <%= link_to "ADD TAGS", edit_map_added_location_path(@added_location.map_id), class: "tag-btn" %>
+      <%= link_to edit_map_added_location_path(@added_location.map_id), class: "tag-btn" do %>
+        <%= fa_icon "hashtag", text: "ADD TAGS" %>
+      <% end %>
     </div>
   </div>
 
