@@ -11,7 +11,7 @@
     </div>
     <p><%= @added_location.address %></p>
     <div>
-      <p class="tags pintextgray">Tags: <%= @added_location.tag_list %> </p>
+      <p class="tags pintextgray"><span>Tags:</span> <%= @added_location.tag_list %> </p>
     </div>
     <div class="tag-link">
       <%= link_to "ADD TAGS", edit_map_added_location_path(@added_location.map_id), class: "tag-review-btn" %>

@@ -10,10 +10,11 @@
     <div>
       <h2><%= review.user.name %></h2>
       <p><%= review.user.email %></p>
-      <p><%= review.created_at.strftime("%B %d, %Y") %></p>
+      <p>Posted:<strong><%= review.created_at.strftime("%B %d, %Y") %></strong></p>
     </div>
     <div>
       <p><%= review.content %></p>
     </div>
   </div>
 </div>
+
