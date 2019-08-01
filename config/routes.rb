@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: :show
   root to: 'pages#index'
   resources :maps do
-    resources :added_locations, only: [:show] do
+    resources :added_locations, only: [:show, :edit, :update] do
       resources :reviews, only: [:create]
     end
     resources :user_groups, only: [:new, :create]

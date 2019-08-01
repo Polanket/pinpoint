@@ -1,5 +1,6 @@
 class MapsController < ApplicationController
   skip_after_action :verify_authorized, only: [:show]
+  attr_reader :current_map
 
   def show
     @map = params[:id].present? ? current_map : current_user.owned_maps.first_or_create(name: "#{current_user.name}'s map")
