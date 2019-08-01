@@ -1,14 +1,24 @@
 class ReviewsController < ApplicationController
 
   def create
+
+    @map = Map.find(params[:map_id])
     @added_location = AddedLocation.find(params[:added_location_id])
     @review = Review.new(review_params)
     @review.added_location = @added_location
+    @review.user = current_user
+    @review.rating = 3
     authorize @review
-    if @review.save
-      redirect_to map_added_location_path(@added_location.id)
+    if @review.save!
+      respond_to do |format|
+        format.html { map_added_location_path(@added_location.map_id, @added_location.id) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      redirect_to map_added_location_path(@added_location.map_id, @added_location.id)
+      respond_to do |format|
+        format.html { map_added_location_path(@added_location.map_id, @added_location.id) }
+        format.js  # <-- idem
+      end
     end
   end
 

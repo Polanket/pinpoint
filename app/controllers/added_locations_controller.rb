@@ -26,7 +26,7 @@ class AddedLocationsController < ApplicationController
   private
 
   def added_location
-    @location = AddedLocation.find(params[:id])
+    @added_location = AddedLocation.find(params[:id])
   end
 
   def marker_composer(map)

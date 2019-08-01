@@ -1,4 +1,4 @@
-<%= simple_form_for([ map, location, review ]) do |form| %>
+<%= simple_form_for(@review ,url: map_added_location_reviews_path(@map, @added_location), remote: true) do |form| %>
   <%= form.input :content, as: :text %>
   <%= form.button :submit %>
 <% end %>

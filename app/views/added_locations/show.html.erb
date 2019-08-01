@@ -1,15 +1,15 @@
 <div class="location-page">
 
   <div class="location-image-container">
-    <%= image_tag @location.photo.first, class:"location-image" %>
+    <%= image_tag @added_location.photo.first, class:"location-image" %>
   </div>
 
   <div class="location-content-container">
     <div class="location-details">
-      <h1><%= @location.name %></h1>
-      <p><%= @location.types.first.capitalize %></p>
+      <h1><%= @added_location.name %></h1>
+      <p><%= @added_location.types.first.capitalize %></p>
     </div>
-    <p><%= @location.address %></p>
+    <p><%= @added_location.address %></p>
   </div>
 
   <div class="location-tags-container">
@@ -26,8 +26,16 @@
 
   </div>
 
-  <div class="location-reviews-container">
-    <%= render 'reviews/form', map: @map, location: @location, review: @review %>
+  <div id="reviews">
+    <% if @added_location.reviews.blank? %>
+      Be the first to leave a review for <%= @added_location.name %>
+    <% else %>
+      <% @added_location.reviews.each do |review| %>
+        <%= render 'reviews/show', review: review %>
+      <% end %>
+    <% end %>
   </div>
-
+  <div id="new_review">
+    <%= render 'reviews/form', map: @map, added_location: @added_location, review: @review %>
+  </div>
 </div>
