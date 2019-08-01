@@ -1,0 +1,6 @@
+<%= simple_form_for [map, location] do |f| %>
+  <div>
+    <%= f.input :tag_list, collection: AddedLocation.categories, selected: 'fun', input_html: { multiple: true, class: 'select2'}, label: "Add tags!" %>
+    <%= f.submit "Add Tags", class: "main-btn", style: "margin-top: 40px;" %>
+  </div>
+<% end %>

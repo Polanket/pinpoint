@@ -11,6 +11,6 @@ class AddedLocation < ApplicationRecord
   after_create_commit { ::MapMarkerNotificationJob.perform_now(self) }
 
   def self.categories
-    ['fun', 'yummy', 'chill', 'nice', 'date', 'must']
+    ['#fun', '#yummy', 'chill', '#nice', '#date', '#must']
   end
 end

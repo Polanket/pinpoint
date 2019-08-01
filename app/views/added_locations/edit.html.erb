@@ -13,14 +13,9 @@
   </div>
 
   <div class="location-tags-container">
-
-  <%= simple_form_for [@map, @location] do |f| %>
-    <div class="field">
-      <%= f.input :tag_list, collection: AddedLocation.categories, selected: 'fun', input_html: { multiple: true, class: 'select2', style: 'font-family:"Karla", "Helvetica", "sans-serif";' }, label: "Add tags!" %>
-      <%= f.submit "Add Tags", class: "main-btn", style: "margin-top: 40px;" %>
+    <div>
+      <%= render 'form', map: @map, location: @location %>
     </div>
-  <% end %>
-
   <div class="location-description-container">
 
   </div>

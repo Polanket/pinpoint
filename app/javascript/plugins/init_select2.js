@@ -3,13 +3,11 @@ import 'select2';
 
 const initSelect2 = () => {
   $(document).ready(function() {
-    console.log($('.multiple-select'))
 
     $('.select2').select2({ width: '100%',
-    placeholder: 'Select multiple friends',
+    placeholder: 'Select from the list',
     allowClear: true }); // (~ document.querySelectorAll)
   });
-
 };
 
 export { initSelect2 };
