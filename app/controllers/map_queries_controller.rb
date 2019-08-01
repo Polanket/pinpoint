@@ -1,4 +1,6 @@
 class MapQueriesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:create]
+
   def create
     authorize current_map
 

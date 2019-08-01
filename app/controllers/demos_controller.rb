@@ -29,8 +29,12 @@ class DemosController < ApplicationController
   end
 
   def show
-    create_guest_user
-    @map = Map.find(1)
+    user = create_guest_user
+    @map = Map.find(3)
+    connect_map = UserGroup.new
+    connect_map.map = @map
+    connect_map.user = user
+    connect_map.save!
     composer = marker_composer(@map)
     @markers = composer.compose
   end
