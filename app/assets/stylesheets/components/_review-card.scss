@@ -1,0 +1,30 @@
+.review-card {
+  margin: 16px 8px 8px 8px;
+  padding: 16px 8px 8px 16px;
+  border: 2px solid;
+  border-image-source: linear-gradient(45deg, rgba(198, 35, 87, 0.1), rgba(255, 255, 255, 1));
+  border-radius: 5px;
+  border-image-slice: 1;
+  box-shadow: 0 0 5px rgba(198, 35, 87, 0.1);
+
+
+}
+
+.review-card-avatar p {
+  opacity: 0.7;
+  font-family: $body-font;
+  font-size: 14px;
+  color: #7A7979;
+}
+
+.review-card-avatar h2 {
+  font-family: $body-font;
+  font-size: 16px;
+  color: #000000;
+  margin: 0;
+}
+
+.review-card-avatar .review-card-infos {
+  display: flex;
+  justify-content: space-between;
+}
