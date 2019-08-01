@@ -34,4 +34,9 @@ class AddedLocationsController < ApplicationController
   def current_map
     @map = Map.find(params[:id])
   end
+
+  def added_location_params
+    params.require(:added_location).permit(:name, :address, :url, :description,
+                                            :phone_number, :types, :photo, :tag_list)
+  end
 end

@@ -1,10 +1,10 @@
 class AddedLocation < ApplicationRecord
+  acts_as_taggable_on :tags
+
   serialize :types, Array
   serialize :photo, Array
 
   belongs_to :map
-  has_many :tags
-
   validates :name, :address, :description, :photo, presence: true
   validates :longitude, :latitude, presence: true, allow_blank: false
 
