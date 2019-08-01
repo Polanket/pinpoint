@@ -10,28 +10,27 @@
       <p class="pintextgray"><%= @added_location.types.first.capitalize %></p>
     </div>
     <p><%= @added_location.address %></p>
+    <div>
+      <p class="tags pintextgray"><span>Tags:</span> <%= @added_location.tag_list %> </p>
+    </div>
+    <div class="tag-link">
+      <%= link_to "ADD TAGS", edit_map_added_location_path(@added_location.map_id), class: "tag-review-btn" %>
+    </div>
   </div>
 
-  <div class="location-tags-container">
-   <p class="pintextgray"> <%= @added_location.tag_list %> </p>
-
-    <%= link_to "Add Tags", edit_map_added_location_path(@added_location.map_id), class: "ghost-btn" %>
-  </div>
 
   <div class="location-description-container">
 
   </div>
 
-  <div class="location-photo-container">
-
-  </div>
-
-  <div id="reviews">
+  <div id="review">
     <% if @added_location.reviews.blank? %>
       Be the first to leave a review for <%= @added_location.name %>
     <% else %>
       <% @added_location.reviews.each do |review| %>
-        <%= render 'reviews/show', review: review %>
+        <div class="review-card">
+          <%= render 'reviews/show', review: review %>
+        </div>
       <% end %>
     <% end %>
   </div>
