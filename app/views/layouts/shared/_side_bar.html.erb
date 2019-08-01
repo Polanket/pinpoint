@@ -5,7 +5,7 @@
 
   <a href="javascript:void(0)" class="closebtn" id='close-nav'>&times;</a>
   <div class="sidebar-container">
-    <h2 class="pintitle2 opacity"><i class="far fa-map" id="map-icon"></i>  Maps</h2>
+    <h2 class="pintitle2 opacity"><%= fa_icon "map", id: "map-icon" %>  Maps</h2>
     <% @my_maps.each do |map|  %>
       <%= link_to render('layouts/shared/sidebar-card', map: map), map_path(map)%>
     <% end %>

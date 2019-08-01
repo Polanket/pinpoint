@@ -37,29 +37,4 @@
   margin: 8px 0px 0px 0px;
 }
 
-.tags {
-  padding: 6px 0 6px 12px;
-  margin: 8px;
-  border: 1px solid #7A7979;
-  border-radius: 25px;
-  font-family: $body-font;
-  font-size: 16px;
-  color: rgba(198, 35, 87, 0.5);
-  flex-grow: 1;
-}
-.tags span {
-  color: #7A7979;
-}
 
-.tag-link {
-  margin: 18px 8px 18px 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.tag-link-review {
-  margin: 18px 8px 32px 8px;
-  display: flex;
-  justify-content: flex-end;
-}
