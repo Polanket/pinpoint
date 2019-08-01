@@ -44,6 +44,7 @@
   font-family: $body-font;
   font-size: 16px;
   color: purple;
+  flex-grow: 1;
 }
 .tags span {
   color: #7A7979;
@@ -53,6 +54,7 @@
   margin: 18px 8px 18px 0;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .tag-link-review {
