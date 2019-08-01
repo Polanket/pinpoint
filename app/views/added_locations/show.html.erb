@@ -7,7 +7,7 @@
   <div class="location-content-container">
     <div class="location-details">
       <h1 class="pintitle1" ><%= @added_location.name %></h1>
-      <p class="pintextgray" style="margin-right: 8px;"><%= @added_location.types.first.capitalize %></p>
+      <p class="pintextgray" style="margin-right: 16px;"><%= @added_location.types.first.capitalize %></p>
     </div>
     <p class="pintextgray"><%= @added_location.address %></p>
     <div class="tag-link">
@@ -28,9 +28,7 @@
       Be the first to leave a review for <%= @added_location.name %>
     <% else %>
       <% @added_location.reviews.each do |review| %>
-        <div class="review-card">
-          <%= render 'reviews/show', review: review %>
-        </div>
+        <%= render 'reviews/show', review: review %>
       <% end %>
     <% end %>
   </div>
