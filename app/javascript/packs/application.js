@@ -2,7 +2,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { initMapbox, placeMarkers, placeAddedMarker } from '../plugins/init_mapbox';
 
-import { initNav } from '../plugins/init_sidebar';
+
 
 import { initSelect2 } from '../plugins/init_select2';
 
@@ -17,8 +17,6 @@ window.placeMarkers = placeMarkers;
 window.placeAddedMarker = placeAddedMarker;
 
 initMapbox();
-
-initNav();
 
 initSelect2();
 

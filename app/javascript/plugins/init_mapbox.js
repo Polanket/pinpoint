@@ -1,5 +1,6 @@
 import mapboxgl from 'mapbox-gl';
 import markerIcon from '../images/added_location.png';
+import { initNav } from './init_sidebar';
 
 const popupOptions = {
   maxWidth: '300px'
@@ -72,6 +73,7 @@ const customMarker = (marker) => {
 }
 
 const initMapbox = () => {
+  initNav();
   const mapDiv = document.getElementById('map');
   if (mapDiv) {
     const markers = JSON.parse(mapDiv.dataset.markers);
