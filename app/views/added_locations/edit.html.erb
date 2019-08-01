@@ -13,15 +13,11 @@
   </div>
 
   <div class="location-tags-container">
-    <span>chulo</span>
-    <span>copas</span>
-    <span>romantico</span>
 
   <%= simple_form_for [@map, @location] do |f| %>
     <div class="field">
-      <%= f.label :tag_list, "Tags (separated by commas)" %>
-      <%= f.text_field :tag_list %>
-      <%= f.submit "Add Tags" %>
+      <%= f.input :tag_list, collection: AddedLocation.categories, selected: 'fun', input_html: { multiple: true, class: 'select2', style: 'font-family:"Karla", "Helvetica", "sans-serif";' }, label: "Add tags!" %>
+      <%= f.submit "Add Tags", class: "main-btn", style: "margin-top: 40px;" %>
     </div>
   <% end %>
 

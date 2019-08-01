@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Pinpoint
   class Application < Rails::Application
+    ActsAsTaggableOn.force_lowercase = true
     config.action_view.embed_authenticity_token_in_remote_forms = true
     config.generators do |generate|
           generate.assets false

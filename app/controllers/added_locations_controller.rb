@@ -27,6 +27,7 @@ class AddedLocationsController < ApplicationController
   end
 
   def update
+    authorize added_location
     if added_location.update(added_location_params)
       redirect_to map_added_location_path(added_location)
     else
@@ -50,6 +51,6 @@ class AddedLocationsController < ApplicationController
 
   def added_location_params
     params.require(:added_location).permit(:name, :address, :url, :description,
-                                            :phone_number, :types, :photo, :tag_list)
+                                            :phone_number, :types, :photo, tag_list: [])
   end
 end

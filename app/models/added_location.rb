@@ -9,4 +9,8 @@ class AddedLocation < ApplicationRecord
   validates :longitude, :latitude, presence: true, allow_blank: false
 
   after_create_commit { ::MapMarkerNotificationJob.perform_now(self) }
+
+  def self.categories
+    ['fun', 'yummy', 'chill', 'nice', 'date', 'must']
+  end
 end
