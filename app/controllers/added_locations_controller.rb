@@ -25,13 +25,14 @@ class AddedLocationsController < ApplicationController
 
   def edit
     authorize added_location
-    @map = current_map
+    @map = Map.find(params[:map_id])
   end
 
   def update
+    @map = Map.find(params[:map_id])
     authorize added_location
     if added_location.update(added_location_params)
-      redirect_to map_added_location_path(added_location)
+      redirect_to map_added_location_path(@map, added_location)
     else
       render :edit
     end

@@ -13,9 +13,9 @@
   </div>
 
   <div class="location-tags-container">
-   <p class="pintextgray"> <%= @location.tag_list %> </p>
+   <p class="pintextgray"> <%= @added_location.tag_list %> </p>
 
-    <%= link_to "Add Tags", edit_map_added_location_path(@location), class: "ghost-btn" %>
+    <%= link_to "Add Tags", edit_map_added_location_path(@added_location.map_id), class: "ghost-btn" %>
   </div>
 
   <div class="location-description-container">
