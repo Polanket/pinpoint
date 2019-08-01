@@ -14,9 +14,9 @@ window.mapbox = initMapbox;
 
 window.placeMarkers = placeMarkers;
 
-initNav();
-
 initMapbox();
+
+initNav();
 
 initSelect2();
 

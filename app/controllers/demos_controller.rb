@@ -30,7 +30,7 @@ class DemosController < ApplicationController
 
   def show
     user = create_guest_user
-    @map = Map.find(3)
+    @map = Map.first
     connect_map = UserGroup.new
     connect_map.map = @map
     connect_map.user = user
