@@ -64,6 +64,7 @@
 
 .tag-review-btn {
   padding: 10px 28px;
+  margin-right: 12px;
   text-decoration: none;
   text-align: center;
   font-weight: normal;
@@ -81,3 +82,21 @@
 
 }
 
+.tag-btn {
+  padding: 4px 8px;
+  margin-right: 8px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: normal;
+  letter-spacing: 1px;
+  font-family: $body-font;
+  font-size: 20px;
+  background-clip: text;
+  color: rgba(198, 35, 87, 0.7);
+  display: inline;
+  cursor: pointer;
+  border: 1px solid linear-gradient(97.34deg, #CC2B5E 0%, rgba(198, 35, 87, 0.516328) 51.35%, rgba(206, 52, 101, 0) 100%), linear-gradient(270deg, #753A88 0%, rgba(117, 58, 136, 0) 100%);;
+  border-radius: 50px;
+  min-width: 120px;
+
+}

@@ -22,6 +22,7 @@ gem 'google_places'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'acts-as-taggable-on', '~> 6.0'
+gem "font-awesome-rails"
 
 group :development do
   gem 'web-console', '>= 3.3.0'

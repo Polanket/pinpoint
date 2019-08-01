@@ -6,27 +6,14 @@
 
   <div class="location-content-container">
     <div class="location-details">
-      <h1><%= @added_location.name %></h1>
-      <p><%= @added_location.types.first.capitalize %></p>
+      <h1 class="pintitle1"><%= @added_location.name %></h1>
+      <p class="pintextgray" style="margin-right: 16px;"><%= @added_location.types.first.capitalize %></p>
     </div>
-    <p><%= @added_location.address %></p>
+    <p class="pintextgray"><%= @added_location.address %></p>
   </div>
 
   <div class="location-tags-container">
-    <div>
+    <div class="tag-form">
       <%= render 'form', map: @map, location: @added_location %>
     </div>
-  <div class="location-description-container">
-
-  </div>
-
-  <div class="location-photo-container">
-
-  </div>
-
-  <div class="location-reviews-container">
-
-  </div>
-
-
 </div>

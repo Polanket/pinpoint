@@ -1,4 +1,7 @@
 <%= simple_form_for [map, location] do |f| %>
-    <%= f.input :tag_list, collection: AddedLocation.categories, selected: 'fun', input_html: { multiple: true, class: 'select2'}, label: "Add tags!" %>
-    <%= f.submit "Add Tags", class: "tag-review-btn" %>
+   <%= f.input :tag_list, collection: AddedLocation.categories, selected: 'fun', input_html: { multiple: true, class: 'select2 pintextblack'}, label: false %>
+    <div class="tag-link-btn">
+      <%= f.submit "TAG IT!", class: "tag-review-btn" %>
+      <%= link_to "GO BACK.", map_added_location_path(location.map_id), class: "ghost-btn" %>
+    </div>
 <% end %>
