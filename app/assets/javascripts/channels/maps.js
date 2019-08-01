@@ -5,7 +5,7 @@ App.global_maps = App.cable.subscriptions.create({
   connected: function() {},
   disconnected: function() {},
   received: function(data) {
-    placeMarkers(window.map, data.marker)
+    placeAddedMarker(window.map, data.marker);
     return console.log(data);
   },
   send_marker: function(marker, map_id) {
