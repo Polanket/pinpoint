@@ -18,7 +18,9 @@ class AddedLocationsController < ApplicationController
   end
 
   def show
+    @map = Map.find(params[:map_id])
     authorize added_location
+    @review = Review.new
   end
 
   def edit
@@ -38,7 +40,7 @@ class AddedLocationsController < ApplicationController
   private
 
   def added_location
-    @location = AddedLocation.find(params[:id])
+    @added_location = AddedLocation.find(params[:id])
   end
 
   def marker_composer(map)

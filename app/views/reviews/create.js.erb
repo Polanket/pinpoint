@@ -1,0 +1,19 @@
+const newReviewForm = document.getElementById('new_review');
+
+function refreshForm(innerHTML) {
+  newReviewForm.innerHTML = innerHTML;
+  const reviewTextField = document.getElementById('review_content')
+  reviewTextField.value = "";
+}
+
+function addReview(reviewHTML) {
+  const reviews = document.getElementById('reviews');
+  reviews.insertAdjacentHTML('beforeend', reviewHTML);
+}
+
+<% if @review.errors.any? %>
+  refreshForm('<%= j render "reviews/form",map: @map, added_location: @added_location, review: @review %>');
+<% else %>
+  addReview('<%= j render "reviews/show", review: @review %>');
+  refreshForm('<%= j render "reviews/form",map: @map, added_location: @added_location, review: Review.new %>');
+<% end %>
