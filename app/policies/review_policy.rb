@@ -1,11 +1,11 @@
-class UserGroupPolicy < ApplicationPolicy
+class ReviewPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
 
- def index?
+  def index?
     true
   end
 

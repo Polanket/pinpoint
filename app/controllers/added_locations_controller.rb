@@ -18,7 +18,9 @@ class AddedLocationsController < ApplicationController
   end
 
   def show
+    @map = Map.find(params[:map_id])
     authorize added_location
+    @review = Review.new
   end
 
   private
