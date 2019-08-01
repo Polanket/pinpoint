@@ -32,6 +32,16 @@ const placeMarkers = (map, markers) => {
   }
 };
 
+const placeAddedMarker = (map, markers) => {
+  const popup = new mapboxgl.Popup(popupOptions).setHTML(markers.infoWindow);
+  const custom_marker = customMarker(markers);
+  new mapboxgl.Marker(custom_marker)
+    .setLngLat([ markers.lng, markers.lat ])
+    .addTo(map)
+    .setPopup(popup)
+    .addTo(map);
+}
+
 // Adds button to get user location
 const postionButton = (map) => {
   map.addControl(new mapboxgl.GeolocateControl({
@@ -87,4 +97,4 @@ const initMapbox = () => {
   }
 };
 
-export { initMapbox, placeMarkers };
+export { initMapbox, placeMarkers, placeAddedMarker };
