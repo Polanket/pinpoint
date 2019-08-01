@@ -1,4 +1,6 @@
 class AddedLocationsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:create, :show]
+
   def create
     authorize current_map
     location = GPClient.spot(params[:marker_id])
