@@ -6,7 +6,7 @@
       <div class="location-card-content">
         <h2 class="location-card-title"><%= spot.name %></h2>
         <p class="location-card-text"><%= spot.address %></p>
-        <%= link_to 'VIEW', map_added_location_path(spot.map_id, spot.id), method: :get, class:"location-card-btn main-btn", style: "margin: auto; font-size: 18px; padding: 12px 25px;"  %>
+        <%= link_to 'VIEW', map_added_location_path(spot.map_id, spot.id), method: :get, class:"location-card-btn ghost-btn", style: "margin: auto; font-size: 18px; padding: 0px;"  %>
       </div>
   </div>
 </div>
