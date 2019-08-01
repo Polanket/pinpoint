@@ -12,11 +12,15 @@
   display: block;
   cursor: pointer;
   max-width: 100px;
+  border: 1px solid;
+  border-radius: 50px;
+  border-color: rgba(198, 35, 87, 0.516328);
+  padding: 12px 30px !important;
 }
 
 .location-card-btn:hover {
-  border: none;
-  color: #7A7979;
+  color: rgba(198, 35, 87, 0.516328);
+  border-color: rgba(198, 35, 87, 0.2);
 }
 
 .location-card-container {
