@@ -1,8 +1,11 @@
 class AddedLocation < ApplicationRecord
+  acts_as_taggable_on :tags
+
   serialize :types, Array
   serialize :photo, Array
 
   belongs_to :map
+
   has_many :tags
   has_many :reviews
 
