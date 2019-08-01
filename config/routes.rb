@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :users, only: :show
   root to: 'pages#index'
   resources :maps do
-    resources :added_locations, only: [:show]
+    resources :added_locations, only: [:show] do
+      resources :reviews, only: [:create]
+    end
     resources :user_groups, only: [:new, :create]
   end
   resource :map_queries
