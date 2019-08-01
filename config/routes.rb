@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resource :map_queries
   get 'maps/:id/results', to: 'maps#results', as: 'search_results'
   post 'maps/:id/:marker_id', to: 'added_locations#create', as: 'save_marker'
+  get 'demo', to: 'demos#show', as: 'demo'
+  resource :demos
 end

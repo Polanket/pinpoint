@@ -1,0 +1,7 @@
+<%= hidden_field :map, :id, value: @map.id %>
+<div class="map-container" id="map_container">
+  <%= render 'map_container', markers: @markers %>
+</div>
+  <%= render 'search_box' %>
+
+
