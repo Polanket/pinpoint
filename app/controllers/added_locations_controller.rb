@@ -21,6 +21,19 @@ class AddedLocationsController < ApplicationController
     authorize added_location
   end
 
+  def edit
+    authorize added_location
+    @map = current_map
+  end
+
+  def update
+    if added_location.update(added_location_params)
+      redirect_to map_added_location_path(added_location)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def added_location

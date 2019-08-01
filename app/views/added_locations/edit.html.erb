@@ -13,10 +13,17 @@
   </div>
 
   <div class="location-tags-container">
-    <%= @location.tag_list  %>
+    <span>chulo</span>
+    <span>copas</span>
+    <span>romantico</span>
 
-    <%= link_to "Add Tags", edit_map_added_location_path(@location) %>
-  </div>
+  <%= simple_form_for [@map, @location] do |f| %>
+    <div class="field">
+      <%= f.label :tag_list, "Tags (separated by commas)" %>
+      <%= f.text_field :tag_list %>
+      <%= f.submit "Add Tags" %>
+    </div>
+  <% end %>
 
   <div class="location-description-container">
 
