@@ -15,6 +15,6 @@ class User < ApplicationRecord
 
 
   def all_users_but_self
-    User.all.select { |user| user != self }
+    User.all.select { |user| user != self && user.name != 'guest'}
   end
 end
