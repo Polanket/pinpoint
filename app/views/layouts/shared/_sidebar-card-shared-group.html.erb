@@ -12,7 +12,7 @@
       <p class="pintextgray"><%= map.description %></p>
     </div>
     <div class = users>
-      <i id="icon" class="fas fa-user-circle"> </i>
+      <%= fa_icon "user-circle", id: "icon" %>
       <p class="pintextgray"> + <%= map.user_groups.size - 1 %> </p>
     </div>
   </div>
