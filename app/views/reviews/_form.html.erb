@@ -1,6 +1,6 @@
 
   <%= simple_form_for(@review ,url: map_added_location_reviews_path(@map, @added_location), remote: true) do |form| %>
-  <%= form.input :content, as: :text, label:false, placeholder: "Leave your review..."%>
+  <%= form.input :content, as: :text, label:false, placeholder: "Remember, be nice!!", class: "text-content" %>
   <div class="tag-link-review">
     <%= form.submit "ADD REVIEW", class: "tag-review-btn" %>
   </div>

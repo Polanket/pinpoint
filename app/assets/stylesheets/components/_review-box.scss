@@ -1,10 +1,13 @@
 #review_content {
   margin: 16px 8px 8px 8px;
-  padding: 16px 8px 8px 16px;
+  padding: 16px 1% 8px 1%;
   font-family: $body-font;
   font-size: 16px;
   color: #7A7979;
-  width: 95%;
   min-height: 80px;
-
+  display: block;
+  width: 98%;
+  box-sizing: border-box;
 }
+
+
