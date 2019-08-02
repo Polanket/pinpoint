@@ -20,16 +20,12 @@
 
   <div class="location-description-container">
   </div>
-  <div id="new_review">
-    <%= render 'reviews/form', map: @map, added_location: @added_location, review: @review %>
-  </div>
   <div id="review">
-    <% if @added_location.reviews.blank? %>
-      <p class="pintextblack"> Be the first to leave a review for <%= @added_location.name %></p>
-    <% else %>
     <% @added_location.reviews.each do |review| %>
       <%= render 'reviews/show', review: review %>
-      <% end %>
     <% end %>
+  </div>
+  <div id="new_review">
+    <%= render 'reviews/form', map: @map, added_location: @added_location, review: @review %>
   </div>
 </div>
